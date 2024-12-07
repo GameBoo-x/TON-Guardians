@@ -1238,6 +1238,8 @@ img {
 
 
 #welcomeMessage {
+    top: 21px; 
+    left: 17px;
     text-align: center;
     display: flex;
     flex-direction: column;
