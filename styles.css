@@ -959,7 +959,7 @@ img {
     color: #fff;
     z-index: 10; 
     transform: translateY(-1px); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);*/
 }
 
 
@@ -1159,7 +1159,7 @@ img {
   margin-right: auto;
   margin-top: 10px;
   margin-bottom: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+/*  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);*/
 }
 
 .invite-header h3 {
