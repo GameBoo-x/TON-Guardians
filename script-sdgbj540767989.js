@@ -256,20 +256,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     startEnergyRecovery();
     updateGameStateInDatabase(); 
     listenToRealtimeChanges();   
-    await initializeApp();  
-    updateBoostsDisplay();
-    updateInviteFriendsButton();
+    await initializeApp(); 
 });
 
 
 document.addEventListener("DOMContentLoaded", function() {
     updateUI(); // تأكد من تحديث الرصيد عند تحميل الصفحة
 });
-
-//document.addEventListener('DOMContentLoaded', async () => {
-   // await loadGameStateFromDB(); 
-    //updateUI();
-//});
 
 
 // مستويات اللعبة المتناسقة
@@ -1230,7 +1223,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 ///////////////////////////////////////////
 
-window.Telegram.WebApp.setHeaderColor('#171628');
+window.Telegram.WebApp.setHeaderColor('#1E2337');
 window.Telegram.WebApp.setBackgroundColor('#000000');
 
 //////////////////////////////////////
@@ -1451,7 +1444,7 @@ function initializeTelegramIntegration() {
 
     // تعريف الصفحات
     const mainPageId = "mainPage"; // الصفحة الرئيسية
-    const defaultHeaderColor = "#171628"; // اللون الافتراضي (أسود)
+    const defaultHeaderColor = "#1E2337"; // اللون الافتراضي (أسود)
     const mainPages = ["mainPage", "boostsPage", "tasksPage", "accountPage", "Puzzlespage"]; // الصفحات الرئيسية
 
     // تحديث زر الرجوع بناءً على الصفحة الحالية
