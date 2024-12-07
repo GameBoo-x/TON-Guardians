@@ -17,7 +17,7 @@
 .TASKS-image {
     position: absolute;
     top: 15px;
-    left: 50%;
+    left: 75%;
     opacity: 0.5;
     border-radius: 15px;
     transform: translateX(-50%);
