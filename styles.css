@@ -400,11 +400,11 @@ img {
     display: flex;
     justify-content: space-between;
     padding: 4px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(2px); 
     position: fixed;
     bottom: 6px;
-    border: 0.5px solid #1a1a1a;
+   /* border: 0.5px solid #1a1a1a;*/
     /*box-sizing: border-box;*/
     border-radius: 20px;
     width: 91%;
