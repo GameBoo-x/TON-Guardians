@@ -1,12 +1,12 @@
 .minee-container {
-    border-top: 1px solid #101010;
+   /* border-top: 1px solid #101010;*/
     width: 100%; /* تغطي كامل عرض الشاشة */
     height: 85%; /* تغطي 70% من الشاشة */
     position: absolute; /* تموضع مطلق */
     bottom: 0; /* تبدأ من أسفل الشاشة */
     left: 0; /* تبدأ من الحافة اليسرى */
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px); 
+  /*  background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);*/
   /*  background: linear-gradient(
         to bottom,
         #000, 
