@@ -401,6 +401,7 @@ img {
     bottom: 10px;
     border: 0.5px solid #1a1a1a;
     /*box-sizing: border-box;*/
+    border-radius: 18px;
     width: 88%;
     left: 50%;
     transform: translateX(-50%);
