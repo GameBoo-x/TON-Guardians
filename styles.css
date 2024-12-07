@@ -58,8 +58,8 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(2px);
+   /* background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);*/
 
    /* background: linear-gradient(to bottom, #2D83EC, #1AC9FF);*/
     background: #1E2337;
@@ -400,7 +400,7 @@ img {
     display: flex;
     justify-content: space-between;
     padding: 4px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #1c1c1c;
     backdrop-filter: blur(2px); 
     /*  position: fixed;*/
     position: absolute;
