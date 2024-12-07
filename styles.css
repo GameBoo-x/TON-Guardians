@@ -398,10 +398,10 @@ img {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(2px); 
     position: fixed;
-    bottom: 10px;
+    bottom: 6px;
     border: 0.5px solid #1a1a1a;
     /*box-sizing: border-box;*/
-    border-radius: 18px;
+    border-radius: 20px;
     width: 88%;
     left: 50%;
     transform: translateX(-50%);
