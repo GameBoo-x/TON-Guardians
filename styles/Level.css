@@ -3,8 +3,9 @@
     display: flex; /* استخدام flexbox لترتيب العناصر */
     justify-content: center; /* توزيع العناصر: النصوص في اليسار والشريط في اليمين */
     align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
-    background-color: #101010; /* لون الخلفية */
-    border-radius: 10px; /* زوايا مستديرة */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px); /* لون الخلفية */
+    border-radius: 20px; /* زوايا مستديرة */
     width: 90%;
     height: 80px;
     color: #ffffff; /* لون النص */
@@ -53,8 +54,9 @@
     justify-content: center; /* محاذاة العناصر نحو اليسار */
     margin: 5px 0;
     padding: 3px;
-    background-color: #101010;
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px); 
+    border-radius: 20px;
     max-width: 400px;
     width: 90%;
     height: 50px;
