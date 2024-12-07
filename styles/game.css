@@ -93,9 +93,10 @@
     display: flex;
     align-items: center; /* محاذاة المحتوى رأسياً في المنتصف */
     justify-content: flex-start; /* محاذاة المحتوى أفقيًا من اليسار */
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 10px;
-    background: #101010;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px); 
     text-align: left; /* لضبط النص إلى اليسار */
     cursor: pointer;
     overflow: hidden;
