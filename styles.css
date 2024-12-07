@@ -372,6 +372,7 @@ img {
     cursor: pointer;
     pointer-events: auto;
     border-radius: 15px;
+    
 }
 
 .diamond-text {
@@ -407,7 +408,7 @@ img {
     border: 0.5px solid #1a1a1a;
     /*box-sizing: border-box;*/
     border-radius: 20px;
-    width: 88%;
+    width: 91%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
@@ -958,6 +959,7 @@ img {
     color: #fff;
     z-index: 10; 
     transform: translateY(-1px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -996,6 +998,7 @@ img {
    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);*/ /* ظل عميق أسفل العنصر */
     z-index: 10; /* لجعله فوق العناصر الأخرى */
     transform: translateY(-1px); /* تحريك طفيف لأعلى ليبدو كأنه مرتفع */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -1110,6 +1113,7 @@ img {
     border-radius: 10px;
     border-bottom: 0.50px solid #161616;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .friend-item:hover {
@@ -1146,7 +1150,6 @@ img {
 .invite-card {
 /* background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);*/
-  background-color: rgba(0, 0, 0, 1);
   color: #fff;
 /* border: 0.01px solid #808080;*/
   border-radius: 10px;
@@ -1193,6 +1196,7 @@ img {
       overflow: hidden;
     /*  border: 1px solid #1a1a1a;*/
       transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   } 
 
 .community-button:hover {
