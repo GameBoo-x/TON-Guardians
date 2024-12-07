@@ -1,5 +1,5 @@
-export const SUPABASE_URL = 'https://lnxyjtpnvowbptbonzht.supabase.co';
-export const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxueHlqdHBudm93YnB0Ym9uemh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjgwMjg2ODksImV4cCI6MjA0MzYwNDY4OX0.Aznwb14FQvRrOMlsVqzLReFSwuJ66HZ4Y_Tq0Dvm5Is';
+export const SUPABASE_URL = 'https://ikthwwisvmiypkmfmbvh.supabase.co';
+export const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlrdGh3d2lzdm1peXBrbWZtYnZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM1MzQ5NzYsImV4cCI6MjA0OTExMDk3Nn0.zr8ap_lt45UlLEW8pmxXwcyrlDjR51KSa5_ILdi4y1Y';
 
 
 //export const SUPABASE_URL = 'https://jaxszuukknuokcpnnbud.supabase.co';
