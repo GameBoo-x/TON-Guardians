@@ -408,7 +408,7 @@ img {
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.8); /* ظل متلاشي تدريجي */
+   /* box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.8);*//* ظل متلاشي تدريجي */
     transition: box-shadow 0.3s ease; /* إضافة انتقال سلس للتأثير */
 }
 
