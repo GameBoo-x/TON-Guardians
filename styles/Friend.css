@@ -81,6 +81,7 @@
     font-weight: bold;
     border-radius: 25px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
 }
 
@@ -106,6 +107,7 @@
     font-weight: bold;
     border-radius: 25px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
     z-index: 100;
 } 
