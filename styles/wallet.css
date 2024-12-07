@@ -61,10 +61,11 @@
 }
 
 .wallet-box {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(2px);     border-radius: 15px; /* تدوير أكبر للحواف */
+  /*  background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);  */
+    border-radius: 15px; /* تدوير أكبر للحواف */
     padding: 20px; /* زيادة الحشوة */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);*/
     width: 85%; /* تحديد العرض بشكل مناسب */
     max-width: 400px; /* تحديد عرض أقصى ليتماشى مع مختلف الأجهزة */
     margin: 0 auto; /* لضمان توسيط الحاوية */
@@ -94,6 +95,7 @@
    /* background-color: rgba(0, 0, 0, 0.009);*/
     background-color: #1E90FF;/* لون زر مناسب */
     border: 1px solid #1a1a1a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     color: #fff;
     font-size: 16px;
     font-weight: bold;
