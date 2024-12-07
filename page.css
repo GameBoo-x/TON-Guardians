@@ -19,8 +19,8 @@
 #mainPage {
     padding-top: 50px; /* يمكنك تغيير القيمة حسب الحاجة */
     background-clip: padding-box;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
-    backdrop-filter: blur(5px); /* تأثير ضبابي */
+   /* background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(5px);*//* تأثير ضبابي */
     
     /*background: linear-gradient(
         to bottom,
@@ -93,8 +93,8 @@
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 100px; /* مسافة سفلية */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
-    backdrop-filter: blur(5px); /* تأثير ضبابي */
+  /*  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(5px);*//* تأثير ضبابي */
 }
 
 
@@ -103,8 +103,8 @@
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 180px; /* مسافة سفلية */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
-    backdrop-filter: blur(5px); /* تأثير ضبابي */
+    /*background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(5px);*/ /* تأثير ضبابي */
 }
 
 
@@ -113,8 +113,8 @@
     overflow-y: auto;
     padding-top: 50px; /* يمكنك تغيير القيمة حسب الحاجة */
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
-    backdrop-filter: blur(5px); /* تأثير ضبابي */
+   /* background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(5px);*/ /* تأثير ضبابي */
 }
 
 #gamePage {
@@ -122,15 +122,15 @@
     padding-bottom: 100px;
     overflow-y: auto;
     background-clip: padding-box;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
-    backdrop-filter: blur(5px); /* تأثير ضبابي */
+   /* background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(5px);*/ /* تأثير ضبابي */
 }
 
 
 
 #boostsPage {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
-    backdrop-filter: blur(5px); /* تأثير ضبابي */
+  /*  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(5px);*/ /* تأثير ضبابي */
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 180px; /* يمكنك تغيير القيمة حسب الحاجة */
@@ -145,8 +145,8 @@
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 40px; /* مسافة سفلية */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
-    backdrop-filter: blur(5px); /* تأثير ضبابي */
+   /* background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(5px);*/ /* تأثير ضبابي */
 }
 
 
@@ -155,8 +155,8 @@
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 0; /* مسافة سفلية */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
-    backdrop-filter: blur(5px); /* تأثير ضبابي */
+    /*background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(5px);*//* تأثير ضبابي */
 }
 
 #DailyPage {
@@ -164,8 +164,8 @@
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 180px; /* مسافة سفلية */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
-    backdrop-filter: blur(5px); /* تأثير ضبابي */
+   /* background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(5px);*/ /* تأثير ضبابي */
 }
 
 #SettingsPage {
@@ -173,8 +173,8 @@
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 50px; /* مسافة سفلية */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
-    backdrop-filter: blur(5px); /* تأثير ضبابي */
+    /*background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(5px);*//* تأثير ضبابي */
 }
 
 #miningPage {
