@@ -101,6 +101,7 @@
     cursor: pointer;
     overflow: hidden;
     margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     margin: 10px auto; /* لضبط العنصر في المنتصف من اليسار إلى اليمين */
 }
 
