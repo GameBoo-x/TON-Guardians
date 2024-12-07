@@ -103,13 +103,14 @@
     margin: 15px 0;
     /*margin-right: 5px;*/
     border-radius: 5px;
-    border-bottom: 1px solid #1a1a1a;
+  /*  border-bottom: 1px solid #1a1a1a;*/
     background-color: rgba(255, 255, 255, 0.001);
     display: flex; 
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 } 
 
 .task-item img {
