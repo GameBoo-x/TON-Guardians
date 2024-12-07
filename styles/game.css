@@ -27,7 +27,7 @@
     top: 18px; 
     left: 38px;*/
     color: #fff; 
-    margin-left: 5px;
+    /*margin-left: 5px;*/
     background-color: rgba(255, 255, 255, 0.001);
     border-radius: 5px; /* لجعل الزر دائري */
    /* padding: px;*//* مساحة إضافية حول الصورة */
@@ -35,9 +35,9 @@
 } 
 
 
-.Play-game-button:hover {
+/*.Play-game-button:hover {
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.3), 0 0 18px rgba(255, 255, 255, 0.2);
-}
+}*/
 
 .Play-game-button i {
     font-size: 1.1rem;
