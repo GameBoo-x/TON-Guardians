@@ -58,11 +58,14 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
-   /* background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(2px);*/
-
-   /* background: linear-gradient(to bottom, #2D83EC, #1AC9FF);*/
-    background: #1E2337;
+    /*background: #1E2337;*/
+    background: linear-gradient(
+        to bottom,
+        #000, 
+        ##161A2D, 
+        #1E2337, 
+        #1E2337
+    )
     background-size: cover;
     background-position: center;
     border-top-left-radius: 0; 
