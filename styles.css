@@ -984,10 +984,10 @@ img {
 
 .right-section {
     position: fixed;
-    top: 60px; 
-    right: 17px; 
-    width: 35%;
-    height: 20px;
+    top: 12px; 
+    right: 40px; 
+    width: auto;
+    height: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
