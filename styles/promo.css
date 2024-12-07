@@ -31,7 +31,8 @@
       font-weight: bold;
      /* border: 1px solid #1a1a1a;*/
       transition: transform 0.2s, box-shadow 0.2s;
-  } 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }  
 
 .promo-code-button i {
     font-size: 1.2rem;
