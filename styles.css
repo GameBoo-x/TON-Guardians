@@ -400,9 +400,9 @@ img {
     display: flex;
     justify-content: space-between;
     padding: 4px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(2px); 
-  /*  position: fixed;*/
+    /*  position: fixed;*/
     position: absolute;
     bottom: 8px;
    /* border: 0.5px solid #1a1a1a;*/
@@ -414,7 +414,7 @@ img {
     z-index: 100;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
    /* box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.8);*//* ظل متلاشي تدريجي */
-    transition: box-shadow 0.3s ease; /* إضافة انتقال سلس للتأثير */
+  /*  transition: box-shadow 0.3s ease;*//* إضافة انتقال سلس للتأثير */
 }
 
 .menu.scrolled {
@@ -431,7 +431,7 @@ img {
     flex-direction: column;
     align-items: center;
     flex: 1;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    /*transition: background-color 0.3s ease, color 0.3s ease;*/
     position: relative;
     background: none;
     margin: 2px;
