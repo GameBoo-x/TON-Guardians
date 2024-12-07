@@ -985,9 +985,9 @@ img {
 .right-section {
     position: fixed;
     top: 12px; 
-    right: 40px; 
+    right: 120px; 
     width: auto;
-    height: 18px;
+    height: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
