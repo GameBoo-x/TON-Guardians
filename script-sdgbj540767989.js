@@ -1230,7 +1230,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 ///////////////////////////////////////////
 
-window.Telegram.WebApp.setHeaderColor('#ffffff');
+window.Telegram.WebApp.setHeaderColor('#000000');
 window.Telegram.WebApp.setBackgroundColor('#000000');
 
 //////////////////////////////////////
@@ -1451,7 +1451,7 @@ function initializeTelegramIntegration() {
 
     // تعريف الصفحات
     const mainPageId = "mainPage"; // الصفحة الرئيسية
-    const defaultHeaderColor = "#ffffff"; // اللون الافتراضي (أسود)
+    const defaultHeaderColor = "#000000"; // اللون الافتراضي (أسود)
     const mainPages = ["mainPage", "boostsPage", "tasksPage", "accountPage", "Puzzlespage"]; // الصفحات الرئيسية
 
     // تحديث زر الرجوع بناءً على الصفحة الحالية
