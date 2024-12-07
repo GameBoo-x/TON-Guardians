@@ -58,7 +58,9 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    background: #000;
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+    
+  /*  background: #000;*/
     background-size: cover;
     background-position: center;
     border-top-left-radius: 0; 
