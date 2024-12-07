@@ -58,18 +58,18 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    /*background: #1E2337;*/
     background: linear-gradient(
         to bottom,
-        #000;
+        #000,
         #161A2D, 
         #1E2337
-    ); 
+    );
     background-size: cover;
     background-position: center;
     border-top-left-radius: 0; 
     border-top-right-radius: 0; 
-} 
+}
+ 
 
 
  @media only screen and (max-width: 768px) {
