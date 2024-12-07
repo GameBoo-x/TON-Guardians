@@ -4,7 +4,7 @@
     color: #000; 
 } 
 
-.Play-game-button {
+/*.Play-game-button {
     position: fixed;
     display: flex;
     align-items: center;
@@ -20,10 +20,20 @@
     font-weight: bold;
     border-radius: 20px;
     cursor: pointer;
-   /* border: 1px solid #1E90FF;*/
-    z-index: 10; /* لجعله فوق العناصر الأخرى */
-    transform: translateY(-1px); /* تحريك طفيف لأعلى ليبدو كأنه مرتفع */
+}*/
+
+.Play-game-button {
+   /* position: fixed;
+    top: 18px; 
+    left: 38px;*/
+    color: #fff; 
+    margin-left: 5px;
+    background-color: rgba(255, 255, 255, 0.001);
+    border-radius: 5px; /* لجعل الزر دائري */
+   /* padding: px;*//* مساحة إضافية حول الصورة */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 } 
+
 
 .Play-game-button:hover {
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.3), 0 0 18px rgba(255, 255, 255, 0.2);
