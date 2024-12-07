@@ -982,28 +982,6 @@ img {
     margin-right: 6px; 
 } 
 
-.right-section {
-    position: fixed;
-    top: 12px; 
-   /* right: 150px;*/
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    height: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(2px); 
-    padding: 4px;
-    border-radius: 20px;
-    color: #fff;
-   /* border: 1px solid #1E90FF;*/
-   /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);*/ /* ظل عميق أسفل العنصر */
-    z-index: 10; /* لجعله فوق العناصر الأخرى */
-    transform: translateY(-1px); /* تحريك طفيف لأعلى ليبدو كأنه مرتفع */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
 
 
 .separators {
@@ -1276,4 +1254,27 @@ img {
     font-size: 15px;
     color: #808080; /* لون أفتح قليلاً لتمييز الاسم */
     margin-right: 10px;
+}
+
+
+
+.right-section {
+    position: fixed;
+    top: 16px; 
+    right: 150px;
+    width: auto;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px); 
+    padding: 4px;
+    border-radius: 20px;
+    color: #fff;
+   /* border: 1px solid #1E90FF;*/
+   /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);*/ /* ظل عميق أسفل العنصر */
+    z-index: 10; /* لجعله فوق العناصر الأخرى */
+    transform: translateY(-1px); /* تحريك طفيف لأعلى ليبدو كأنه مرتفع */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
