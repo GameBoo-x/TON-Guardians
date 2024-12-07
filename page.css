@@ -5,7 +5,7 @@
     position: absolute; /* تموضع مطلق */
     bottom: 0; /* تبدأ من أسفل الشاشة */
     left: 0; /* تبدأ من الحافة اليسرى */
-    background: #000;
+    background: #1E2337;
   /*  background: linear-gradient(
         to bottom,
         #000, 
@@ -20,9 +20,9 @@
     background-clip: padding-box;
     background: linear-gradient(
         to bottom,
-        #000, 
-        #3592e7, 
-        #1E90FF, 
+        #1E2337, 
+        #2D83EC, 
+        #1AC9FF, 
         black
     );
 
