@@ -1,3 +1,23 @@
+#globalNavbartop {
+   /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;*/
+    top: 0;
+    left: 50%; /* تبدأ من منتصف الشاشة */
+    transform: translateX(-50%); /* يتم تحريكها بشكل أفقي بحيث تكون بالمنتصف */
+    width: 90%;
+    height: 50px;
+    z-index: 500;
+    border-bottom: 1px solid #1c1c1c;
+    border-radius: 0 0 20px 20px ; /* زوايا مستديرة في الأسفل فقط */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.00009);
+    backdrop-filter: blur(5px); 
+}
+
+
+
 .overlay {
     position: fixed;
     top: 0;
