@@ -3,9 +3,9 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;*/
-   /* top: 0;*/
-    left: 50%; /* تبدأ من منتصف الشاشة */
-    transform: translateX(-50%); /* يتم تحريكها بشكل أفقي بحيث تكون بالمنتصف */
+    top: 0;
+   /* left: 50%;
+    transform: translateX(-50%);*//* يتم تحريكها بشكل أفقي بحيث تكون بالمنتصف */
     width: 90%;
     height: 50px;
     z-index: 500;
