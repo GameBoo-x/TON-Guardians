@@ -707,7 +707,13 @@
   </div>
 </nav>
 
-     
+ <script>
+    if (document.referrer.indexOf("index.html") === -1) {
+        // إذا لم يتم الوصول من الصفحة الرئيسية، منع الوصول
+        window.location.href = "index.html";
+    }
+</script>
+
     <script type="module" src="script-sdgbj540767989.js"></script>
     <script type="module" src="Scripts/Not-saving.js"></script>
     
