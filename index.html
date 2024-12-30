@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>Telegram App</title>
     <script>
-        // إعادة التوجيه إلى الملف المطلوب
-        window.location.href = "mine.html";
+        async function loadContent() {
+            try {
+                const response = await fetch('mine.html'); // اسم الملف المراد جلبه
+                const content = await response.text();
+                document.getElementById('content').innerHTML = content;
+            } catch (error) {
+                console.error('Error loading content:', error);
+                document.getElementById('content').innerText = 'Failed to load content.';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadContent);
     </script>
 </head>
 <body>
-    <p>Redirecting...</p>
+    <div id="content">Loading content...</div>
 </body>
 </html>
