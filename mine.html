@@ -630,32 +630,34 @@
     
 
 <!-- صفحه المتصدرين  -->
-<div id="leaderboardPage" class="screen-content hidden">
-  <div id="globalNavbar">
-     <div id="balanceContainer">
-       <span id="leaderboardnavbarBalanceDisplay">0.00</span> 
-     </div>
+        <div id="leaderboardPage" class="screen-content hidden">
+    <div id="globalNavbar">
+        <div id="balanceContainer">
+            <span id="leaderboardnavbarBalanceDisplay">0.00</span>
+        </div>
     </div>
     <img src="i/Leaderboard.png" alt="Leaders Image" class="Leaders-image">
-    <p id="Leaders-txt">Leaderboard</p>
+    <p id="Leaders-txt">LEADERBOARD</p>
 
-    <!-- عرض ترتيب المستخدم الشخصي -->
-    <div id="userRanking" class="user-ranking">
-       <!-- <div class="leaderboard-row" id="currentUserRow">-->
-         <img src="https://sawcoin.vercel.app/i/users.jpg" alt="User Avatar" class="leaderboard-avatar" id="userAvatar" />
-         <span class="leaderboard-username" id="userUsername"></span>
-         <span class="leaderboard-balance" id="userBalance"></span>
-         <span class="leaderboard-rank" id="userRank"></span>
-     </div>
-
-
-    <p id="Leaders-txxt">Top 5</p>
-    <!-- عرض قائمة أفضل 10 لاعبين -->
-    <div id="leaderboardContainer" class="leaderboard-container">
-        <!-- يتم ملء هذه القائمة ديناميكيًا -->
+    <div id="userRankContainer" class="user-ranking">
+        <img src="https://sawcoin.vercel.app/i/users.jpg" alt="User Avatar" class="leaderboard-avatar" id="userAvatar" />
+        <span class="leaderboard-username" id="userUsername"></span>
+        <span class="leaderboard-balance" id="userBalance"></span>
+        <span class="leaderboard-rank" id="userRank"></span>
     </div>
- </div>
-    
+
+    <div id="leaderboardWrapper">
+        <p class="leaderboard-item right">Name</p>
+        <p id="Leaders-txxt">TOP 50</p>
+        <p class="leaderboard-item left">Rank</p>
+    </div>
+
+    <!-- الحاويات المخصصة -->
+    <div id="topThreeContainer" class="leaderboard-top-three"></div>
+    <div id="fourthFifthContainer" class="leaderboard-fourth-fifth"></div>
+    <div id="leaderboardContainer" class="leaderboard-container"></div>
+</div>
+
 
 <!-- Bottom Navigation -->
 <nav class="menu">
