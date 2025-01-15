@@ -319,7 +319,7 @@ async function ensureUserAuthenticationAndDatabase(telegramId, userName) {
             console.log("User not found in database. Adding user...");
             const { error: insertError } = await supabase
                 .from("users")
-                .insert({ telegram_id: telegramId, username: userName, balance: 0 });
+                .insert({ telegram_id: telegramId, username: userName, balance: 500 });
             if (insertError) throw new Error(`Failed to insert user data: ${insertError.message}`);
             console.log("User added to database successfully.");
         } else {
