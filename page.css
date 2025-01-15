@@ -1,6 +1,6 @@
 #Le {
     position: absolute;
-    bottom: 100px;
+    bottom: 150px;
     left: 50%;
     transform: translateX(-50%);
     width: 50px; /* العرض + البادينج */
@@ -893,7 +893,7 @@
 .leaderboard-username {
     flex: 1;
     font-size: 13px;
-    margin-left: 28px;
+    margin-left: 22px;
 } 
 
 .leaderboard-balance {
