@@ -1018,7 +1018,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameState.balance += amount;
 
         updateUI();
-        saveGameState();
+       // saveGameState();
         updateGameStateInDatabase({
             balance: gameState.balance,
         });
