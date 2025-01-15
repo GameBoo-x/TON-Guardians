@@ -95,35 +95,32 @@ async function loadGameState() {
     const userId = uiElements.userTelegramIdDisplay.innerText;
 
     try {
-        console.log('Loading game state from Supabase...');
         const { data, error } = await supabase
             .from('users')
             .select('*')
             .eq('telegram_id', userId)
             .single();
 
-        if (error) {
-            console.error('Error loading game state from Supabase:', error.message);
-            return;
-        }
-
         if (data) {
-            console.log('Loaded game state:', data);
-
-            // دمج البيانات مع التأكد من عدم الكتابة فوق balance إذا لم يكن موجودًا
             gameState = {
                 ...gameState,
                 ...data,
-                balance: data.balance !== undefined ? data.balance : gameState.balance,
+                balance: data.balance ?? gameState.balance, // دمج الرصيد مع البيانات الحالية
             };
             updateUI();
-        } else {
-            console.warn('No game state found for this user.');
         }
     } catch (err) {
-        console.error('Unexpected error:', err);
+        console.error('Error loading game state:', err);
     }
 }
+
+window.addEventListener('beforeunload', (event) => {
+    if (isUpdatingDatabase) {
+        event.preventDefault();
+        event.returnValue = '';
+    }
+});
+
 
 
 // حفظ حالة اللعبة في LocalStorage وقاعدة البيانات
