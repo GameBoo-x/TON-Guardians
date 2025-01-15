@@ -1,6 +1,6 @@
 .leader i {
     position: absolute;
-    bottom: 136px;
+    bottom: 137px;
     left: 50%;
     transform: translateX(-50%);
     width: 50px; /* العرض + البادينج */
@@ -882,7 +882,7 @@
 } 
 
 .leaderboard-avatar {
-    width: 35px;
+    width: 42px;
     height: auto;
     border-radius: 50%;
     margin-left: 10px;
