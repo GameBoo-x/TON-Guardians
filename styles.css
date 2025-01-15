@@ -1,22 +1,93 @@
-:root {
-    --primary-color: #000;
-    --secondary-color: #ff00f0;
-    --background-color-dark: #1c1c1c;
-    --text-color-dark: #fff;
-    --text-color-light: #fff;
-    --button-bg: #003366;
-    --button-text-color: #fff;
-    --accent-color: #003366;
-    --hover-color: #0085ff;
-    --boost-item-bg: #fff;
-    --task-item-bg: #f0f0f0;
-    --claimed-bg: #00ffea;
-    --claimed-text-color: #000;
-    --task-font-size: 14px;
-    --boost-font-size: 14px;
-    --claim-button-size: 12px;
-    --small-text-size: 12px;
+.horizontal-leaders {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    box-sizing: border-box;
+    width: 98%;
+    gap: 5px; 
+    position: relative;
 }
+
+.leaderseven-rank {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px; 
+    height: 20px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    color: #2D83EC;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+} 
+
+.horizontal-leaders .leader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.horizontal-leaders .leader-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-bottom: 5px;
+}
+
+.horizontal-leaders .leader-rank {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+}
+
+.horizontal-leaders .leader-name {
+    font-size: 11px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.horizontal-leaders .leader-balance {
+    font-size: 10px;
+    color: #fff;
+    margin-top: 5px;
+}
+
+
+
+
+/*.leaderboard-top-three {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    background: #fff8e1;
+}
+
+.leaderboard-fourth-fifth {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #b0c4de;
+    border-radius: 8px;
+    background: #f0f8ff;
+}
+
+.leaderboard-rest {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+}*/
+
 
 /* إزالة تأثير التركيز */
 button, input, select, textarea, img, a {
@@ -35,12 +106,12 @@ button, input, select, textarea, img, a {
 
 body {
     margin: 0;
-    font-family: 'Rubik',sans-serif ;
-    font-weight: 700;
-   /* font-family: 'Raleway', sans-serif;
-    font-style: normal;*/
+    font-family: 'Jersey 15',serif ;
+    font-weight: 400;
+   /* font-family: 'Raleway', sans-serif;*/
+    font-style: normal;
    /* font-style: italic;*/
-    background-color: #101010;
+    background-color: #000;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -52,48 +123,24 @@ body {
 }
 
 
-/*.container {
-    width: 100%;
-    max-width: 450px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    background-image: 
-    radial-gradient(circle at 24% 23%, rgba(167, 167, 167,0.06) 0%, rgba(167, 167, 167,0.06) 25%,rgba(148, 148, 148,0.06) 25%, rgba(148, 148, 148,0.06) 50%,rgba(129, 129, 129,0.06) 50%, rgba(129, 129, 129,0.06) 75%,rgba(110, 110, 110,0.06) 75%, rgba(110, 110, 110,0.06) 100%),
-    radial-gradient(circle at 58% 30%, rgba(14, 14, 14,0.06) 0%, rgba(14, 14, 14,0.06) 25%,rgba(60, 60, 60,0.06) 25%, rgba(60, 60, 60,0.06) 50%,rgba(107, 107, 107,0.06) 50%, rgba(107, 107, 107,0.06) 75%,rgba(153, 153, 153,0.06) 75%, rgba(153, 153, 153,0.06) 100%),
-    radial-gradient(circle at 79% 53%, rgba(225, 225, 225,0.06) 0%, rgba(225, 225, 225,0.06) 25%,rgba(189, 189, 189,0.06) 25%, rgba(189, 189, 189,0.06) 50%,rgba(152, 152, 152,0.06) 50%, rgba(152, 152, 152,0.06) 75%,rgba(116, 116, 116,0.06) 75%, rgba(116, 116, 116,0.06) 100%),
-    linear-gradient(221deg, #000000, rgba(0,0,0,0.5));
-    background-size: cover;
-    background-position: center;
-    border-top-left-radius: 0; 
-    border-top-right-radius: 0; 
-}*/
-
-
 .container {
     width: 100%;
     max-width: 450px;
     height: 100%;
-    margin: 0 auto; 
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    border-radius: 25px 25px 0 0;
-    background-image: 
-    radial-gradient(circle at 24% 23%, rgba(167, 167, 167,0.06) 0%, rgba(167, 167, 167,0.06) 25%,rgba(148, 148, 148,0.06) 25%, rgba(148, 148, 148,0.06) 50%,rgba(129, 129, 129,0.06) 50%, rgba(129, 129, 129,0.06) 75%,rgba(110, 110, 110,0.06) 75%, rgba(110, 110, 110,0.06) 100%),
-    radial-gradient(circle at 58% 30%, rgba(14, 14, 14,0.06) 0%, rgba(14, 14, 14,0.06) 25%,rgba(60, 60, 60,0.06) 25%, rgba(60, 60, 60,0.06) 50%,rgba(107, 107, 107,0.06) 50%, rgba(107, 107, 107,0.06) 75%,rgba(153, 153, 153,0.06) 75%, rgba(153, 153, 153,0.06) 100%),
-    radial-gradient(circle at 79% 53%, rgba(225, 225, 225,0.06) 0%, rgba(225, 225, 225,0.06) 25%,rgba(189, 189, 189,0.06) 25%, rgba(189, 189, 189,0.06) 50%,rgba(152, 152, 152,0.06) 50%, rgba(152, 152, 152,0.06) 75%,rgba(116, 116, 116,0.06) 75%, rgba(116, 116, 116,0.06) 100%),
-    linear-gradient(221deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+    background: 
+        linear-gradient(to bottom, rgba(10, 10, 10, 0.9) 0%, rgba(20, 20, 20, 0.7) 35%, rgba(30, 30, 30, 0.3) 75%, rgba(0, 0, 0, 0) 100%),
+        radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1) 50%),
+        radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.2) 80%),
+        radial-gradient(circle at center, rgba(20, 20, 20, 1), rgba(10, 10, 10, 0.9) 50%, rgba(5, 5, 5, 0.8) 80%);
+    background-blend-mode: overlay, multiply;
     background-size: cover;
     background-position: center;
-   /* border-top-left-radius: 20px; 
-    border-top-right-radius: 20px; */
 }
- 
- 
 
  @media only screen and (max-width: 768px) {
   .container {
@@ -110,9 +157,9 @@ body {
 }
 
 /* منع سحب الصور */
-img {
+/*img {
     pointer-events: none;
-}
+}*/
 
 
 .line {
@@ -157,7 +204,7 @@ img {
     width: 100%;
     padding: 0;
     margin: 0;
-    background: #101010;
+    background: #000;
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -191,11 +238,12 @@ img {
 }
 
 .loading-spinnerr {
-    border: 7px solid rgba(255, 255, 255, 0.3); /* الحواف الشفافة */
-    border-top: 7px solid #fff; /* اللون الأبيض في الجزء العلوي */
+    backdrop-filter: blur(5px);
+    border: 6px solid rgba(128, 128, 128, 0.5); /* الحواف الشفافة */
+    border-top: 6px solid #fff; /* اللون الأبيض في الجزء العلوي */
     border-radius: 50%; /* جعل الشكل دائريًا */
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     animation: spin 2s linear infinite; /* التحريك المستمر */
 }
 
@@ -292,9 +340,9 @@ img {
 #balanceAmount::before {
     content: "";
     display: inline-block;
-    width: 42px; /* عرض الصورة */
-    height: 42px; /* ارتفاع الصورة */
-    background-image: url('i/coinss.png'); /* رابط الصورة */
+    width: 44px; /* عرض الصورة */
+    height: 44px; /* ارتفاع الصورة */
+    background-image: url('https://image-six-tawny.vercel.app/Jsl.png'); /* رابط الصورة */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center; /* تمركز الصورة */
@@ -303,7 +351,7 @@ img {
 }
 
 .main-digits {
-    font-size: 36px; 
+    font-size: 37px; 
     color: #fff;
     line-height: 1; /* لضمان التناسق بين النصوص */
 } 
@@ -313,105 +361,6 @@ img {
     color: #fff;
     line-height: 1; /* لتقليل الفراغ بين النصوص */
 }
-
-.energy-bar-container {
-    display: flex;
-    flex-direction: column; /* ترتيب عمودي */
-    justify-content: center; /* محاذاة عمودية للمحتوى */
-    align-items: center; /* محاذاة المحتوى عموديًا */
-    position: absolute; /* تموضع مطلق */
-    bottom: 135px; /* المسافة من أسفل الشاشة */
-    left: 50%; /* المنتصف أفقيًا */
-    transform: translateX(-50%); /* تحريك الحاوية إلى المنتصف أفقيًا */
-    width: 80%; 
-    margin: 0 auto; 
-    transition: width 0.3s ease-in-out; /* تأثير التمدد بسلاسة */
-} 
-
-.progress-bar {
-    width: 80%; 
-    height: 13px; 
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); /* تأثير الضبابية */
-    border-radius: 50px; /* شكل الشريط */
-    overflow: hidden; /* قص المحتوى الزائد */
-    display: flex; /* جعل العناصر ترتب بشكل أفقي */
-    align-items: center; /* محاذاة الأيقونة والمحتويات الأخرى */
-    z-index: 9;
-}
-
-.progress-bar::before,
-.progress-bar::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background-image: 
-        radial-gradient(circle, #ffffff 1px, transparent 1px),
-        radial-gradient(circle, #ffffff 1px, transparent 1px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
-    animation: moveElectricity 4s linear infinite;
-    opacity: 0.3;
-    pointer-events: none;
-}
-
-.progress-bar::after {
-    animation-duration: 6s;
-    animation-direction: reverse;
-    opacity: 0.2;
-}
-
-@keyframes moveElectricity {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(-20px, -20px);
-    }
-}
-
- 
-.energy-icon {
-    font-size: 1.4rem; /* حجم الأيقونة */
-    color: #F7F9FB; /* لون ذهبي */
-    position: absolute; /* جعل الأيقونة فوق الشريط */
-    left: 50px; /* الموقع الأفقي للزائد الأيقونة */
-    z-index: 10;
-}
-
-.progress-bar-inner {
-    height: 100%; 
-    width: 100%; 
-    background: linear-gradient(90deg, #4375ca, #2D83EC);
-    transition: width 0.5s ease;
-} 
-
-#energyInfo {
-    background-color: transparent;
-    background: #fff;
-    -webkit-background-clip: text; 
-    background-clip: text;
-    color: transparent;
-    font-family: 'Rubik',sans-serif ;
-    font-weight: 700;
-   /* font-family: 'JetBrains Mono', monospace;*/
-    font-size: 15px; /* حجم الخط */
-    text-align: center; /* المحاذاة لليسار */
-    margin-left: 4px;
-    margin-right: 4px;
-    margin-bottom: 8px;
-    direction: rtl; /* الحفاظ على الاتجاه من اليمين لليسار */
-    white-space: nowrap;
-}
-
- #maxEnergy {
-   font-size: 15px;  
-   white-space: nowrap;
-   color: #1a1a1a;
-} 
 
      
 .main-content {
@@ -428,14 +377,14 @@ img {
     align-items: center;
     justify-content: center;
     margin-top: 0; 
-    margin-bottom: 80px;
+    margin-bottom: 75px;
     flex: 1;
     animation: popIn 0.4s ease forwards;
 } 
  
 .clickable-image img {
-    width: 295px;
-    height: 295px;
+    width: 310px;
+    height: 310px;
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -470,28 +419,31 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 70px;
     position: fixed;
-    bottom: 18px;
-    border-radius: 20px;
-    width: 89%;
+    bottom: 0;
+    border-radius: 15px 15px 000;
+    width: 100%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    padding-bottom: 40px; /* لإعطاء مساحة للنصوص */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 }
 
-.menu-list{
+.menu-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
-   /* border: 1px solid #1c1c1c;*/
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.00009);
-    backdrop-filter: blur(5px); 
+    height: 100%;
+    margin: 10px auto; 
+   /* border-top: 1px solid #1c1c1c;*/
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+   /* background-color: rgba(255, 255, 255, 0.00009);
+    backdrop-filter: blur(5px);*/
     border-radius: 20px;
-    width: 100%;
+    width: 95%;
     z-index: 100;
 }
  
@@ -536,9 +488,21 @@ img {
 }
 
 .menu-item.active .icon-wrapper {
+   /* background: linear-gradient(45deg, #2D83EC, #1AC9FF);*/
     background-color: #2D83EC;
+    box-shadow: 0 0 2px rgba(45, 131, 236, 0.7), 
+                inset 0 0 2px rgba(255, 255, 255, 0.5), 
+                inset 0 0 3px rgba(45, 131, 236, 0.8); /* تأثير الإضاءة الداخلية */
+    position: relative;
+    transform: scale(1.1); /* تكبير بسيط للدائرة لإبراز التأثير */
 }
 
+.menu-item.active i {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 
+                 0 -1px 2px rgba(255, 255, 255, 0.5); /* تأثير الظلال للأيقونة */
+}
+  
 .menu-label.active {
     color: #fff;
 }
@@ -548,6 +512,7 @@ img {
     top: 60px; /* إخراج النص من حدود القائمة */
     font-size: 12px;
     color: #808080;
+    margin-top: 5px; 
     text-align: center;
     transition: color 0.3s ease;
 }
@@ -576,7 +541,7 @@ img {
     background-color: #101010;
     padding: 20px;
     font-weight: 500;
-    border-radius: 20px 20px 0 0; 
+    border-radius: 30px 30px 0 0; 
     text-align: center;
     position: fixed;
     bottom: 0;
@@ -600,7 +565,7 @@ img {
 .promo-content {
     background-color: #101010; 
     padding: 20px;
-    border-radius: 20px 20px 0 0; 
+    border-radius: 30px 30px 0 0; 
     text-align: center;
     position: fixed;
     bottom: 0;
@@ -636,12 +601,14 @@ img {
 
 
 .game-button {
-    border-radius: 20px;
-    width: 100%; /* التأكد من أن الأزرار تأخذ عرض الحاوية */
+    border-radius: 25px;
+    width: 90%; /* التأكد من أن الأزرار تأخذ عرض الحاوية */
     height: 40px;
     color: #fff;
+    font-size: 15px; 
+    font-weight: bold;
     background-color: rgba(0, 0, 0, 0.9);
-    margin: 10px 0; /* المسافة بين الأزرار */
+    margin: 10px auto; /* المسافة بين الأزرار */
 }
 
 
@@ -678,7 +645,7 @@ img {
 
 .close {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 20px;
     font-size: 20px;
     width: 30px; /* تحديد عرض ثابت */
@@ -704,8 +671,7 @@ img {
     backdrop-filter: blur(9px); 
     color: #fff;
     padding: 12px 20px; /* زيادة padding لجعل الإشعار طويل */
-    border-radius: 15px;
-    border: 1px solid #1a1a1a;
+    border-radius: 20px;
     font-size: 13px;
     z-index: 1000;
     opacity: 0; /* البداية غير مرئية */
@@ -764,27 +730,6 @@ img {
     margin: 10px 0;
     text-align: center;
  }
-
-#Daily-earning {
-    color: #808080; 
-    font-size: 15px; 
-    text-align: left;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    margin-right: auto;
-    margin-left: 20px;
-}
-
-#t {
-    z-index: 100;
-    color: #808080; 
-    font-size: 15px; 
-    text-align: left;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    margin-right: auto;
-    margin-left: 18px;
-}
 
 #puzzlessText {
     color: #808080; 
@@ -1080,28 +1025,27 @@ img {
 }
 
 #userName {
-    font-size: 15px;
+    font-size: 13px;
     color: #fff; /* لون أفتح قليلاً لتمييز الاسم */
-    margin-right: 10px;
+    margin-right: 5px;
     margin-left: 5px;
-    animation: popIn 0.4s ease forwards;
 }
-
-/*.user-details-i {
-    position: absolute; 
-    top: 18px; 
-    left: 24px; 
-    z-index: 100; 
-    animation: popIn 0.4s ease forwards;
-}*/
 
 .userrr-image {
-    width: 30px; /* عرض الصورة */
-    height: 30px; /* ارتفاع الصورة */
+    width: 28px; /* عرض الصورة */
+    height: 28px; /* ارتفاع الصورة */
     border-radius: 50%; /* جعل الصورة دائرية */
     object-fit: cover; /* تأكد من احتواء الصورة داخل الدائرة */
-    border: 1px solid #161616; /* إضافة إطار أبيض حول الصورة */
+    border: 0.2px solid #161616;
 }
+
+.userrr-imagee {
+    width: 32px; /* عرض الصورة */
+    height: 32px; /* ارتفاع الصورة */
+    border-radius: 50%; /* جعل الصورة دائرية */
+    object-fit: cover; /* تأكد من احتواء الصورة داخل الدائرة */
+    border: 0.2px solid #161616;
+} 
 
 
 .right-section { 
@@ -1109,4 +1053,38 @@ img {
     color:#2D83EC;
     margin-right: 1px;
 }    
+
+
+
+#Daily-earning {
+    font-weight: 500;
+    z-index: 100;
+    color: #808080; 
+    font-size: 12.5px; 
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);    border-radius: 25px; /* الزوايا الدائرية */
+    padding: 8px; 
+}
+
+#t {
+    font-weight: 500;
+    z-index: 100;
+    color: #808080; 
+    font-size: 12.5px; 
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);    border-radius: 25px; /* الزوايا الدائرية */
+    padding: 8px; /* مسافة داخلية بين النص وحواف الخلفية */
+}
 
