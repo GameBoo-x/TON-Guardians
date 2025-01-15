@@ -2203,41 +2203,31 @@ competition.addEventListener("scroll", updateArrows);
 updateArrows();
 
 
-// عناصر DOM
 const overlay = document.getElementById('UsersettingsOverlay');
 const settingsContainer = document.getElementById('UsersettingsContainer');
-const openButton = document.getElementById('openSettingsButton');
 const closeButton = document.getElementById('closeSettingsButton');
 
+// تأكد أن النافذة مخفية عند التحميل
+window.addEventListener('DOMContentLoaded', () => {
+  settingsContainer.classList.add('hidden');
+  overlay.style.display = 'none';
+});
+
 // فتح النافذة
-openButton.addEventListener('click', () => {
+document.getElementById('openSettingsButton').addEventListener('click', () => {
   overlay.style.display = 'block';
-  settingsContainer.classList.add('visible');
-  closeButton.style.display = 'block';
+  settingsContainer.classList.remove('hidden');
 });
 
 // إغلاق النافذة
-closeButton.addEventListener('click', closeSettings);
-overlay.addEventListener('click', closeSettings);
-
-function closeSettings() {
+closeButton.addEventListener('click', () => {
   overlay.style.display = 'none';
-  settingsContainer.classList.remove('visible');
-  closeButton.style.display = 'none';
-}
-
-// السحب للأسفل للإغلاق
-let startY = 0;
-
-settingsContainer.addEventListener('touchstart', (e) => {
-  startY = e.touches[0].clientY;
+  settingsContainer.classList.add('hidden');
 });
 
-settingsContainer.addEventListener('touchmove', (e) => {
-  const currentY = e.touches[0].clientY;
-  if (currentY - startY > 50) {
-    closeSettings();
-  }
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  settingsContainer.classList.add('hidden');
 });
 
 
