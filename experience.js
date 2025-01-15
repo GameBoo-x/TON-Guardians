@@ -203,10 +203,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (isBanned) return; 
     await loadGameState();   
     await restoreEnergy();
-    startEnergyRecovery();
-    //updateGameStateInDatabase(); 
+    startEnergyRecovery(); 
     updateUI();  
     loadFriendsList(); 
+    await fetchLeaderboard();
+    await fetchUserRank();
     await initializeApp();  
 });
 
@@ -403,11 +404,12 @@ function updateUI() {
     }
 
     // حفظ حالة اللعبة محليًا
-   // saveGameState();
+    saveGameState();
+    await fetchUserRank();
     updateBoostsDisplay();
-    updateGameStateInDatabase({
-        balance: gameState.balance,
-    });
+   // updateGameStateInDatabase({
+       // balance: gameState.balance,
+    //});
 }
 
 
@@ -692,7 +694,7 @@ function handleSingleTouch(event) {
         return;
     }
 
-    const clickValue = gameState.clickMultiplier || 1;
+    const clickValue = gameState.clickMultiplier || 0;
     const requiredEnergy = clickValue;
     const currentEnergy = gameState.maxEnergy - localEnergyConsumed;
 
@@ -1031,10 +1033,10 @@ document.addEventListener('DOMContentLoaded', () => {
         gameState.balance += amount;
 
         updateUI();
-       // saveGameState();
-        updateGameStateInDatabase({
-            balance: gameState.balance,
-        });
+        saveGameState();
+        //updateGameStateInDatabase({
+           // balance: gameState.balance,
+       // });
     }
 });
 
@@ -1513,7 +1515,7 @@ function showContent(contentId) {
          // إضافة المكافأة لرصيد المستخدم
          gameState.balance += reward;
    
-         // تحديث واجهة المستخدم
+        
         updateUI();
 
        // حفظ الكود ككود مستخدم
@@ -2117,13 +2119,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateUserImage("userDetailsImage"); // صورة التفاصيل
     updateUserImage("stingUserImage");   // صورة الإعدادات
 });
-
-document.addEventListener('DOMContentLoaded', async () => {
-    await fetchLeaderboard();
-    await fetchUserRank();
-});
-
-
 
 
 //////////////////////
