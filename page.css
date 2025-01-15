@@ -165,8 +165,8 @@
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-    width: 30px; /* العرض + البادينج */
-    height: 30px; /* الطول + البادينج */
+    width: 25px; /* العرض + البادينج */
+    height: 25px; /* الطول + البادينج */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
