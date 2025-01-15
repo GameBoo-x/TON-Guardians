@@ -1,15 +1,15 @@
 .description-taskk {
     width: 100%;
-    text-align: left;
+    text-align: center;
     padding-top: 3px;
     z-index: 50;
-    margin-top: 3px;
-    margin-left: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     position: relative; /* لإبقاء النص في موضعه فوق الصورة */
 }
 
 .taskk-title {
-    font-size: 24px;
+    font-size: 20px;
     color: #fff; /* تأكد من أن النص يظهر بوضوح على الصورة */
     z-index: 100; /* تأكد من أن النص فوق الصورة */
     animation: popIn 0.4s ease forwards;
