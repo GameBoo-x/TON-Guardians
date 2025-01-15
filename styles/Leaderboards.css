@@ -61,8 +61,6 @@
     margin-right: 10px;
 }
 
-
-
 #leaderboardWrapper {
   border-radius: 25px;
   margin: 10px auto;
@@ -84,7 +82,7 @@
   -webkit-background-clip: text; 
   background-clip: text;
   color: transparent;
-  margin-right: 20px;
+  /*margin-right: 20px;*/
   text-align: center;
   flex: 1;
 }
