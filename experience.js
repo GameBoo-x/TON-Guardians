@@ -2061,9 +2061,9 @@ async function updateLeaderboardDisplay(leaderboard) {
             userRow.innerHTML = `
                 <img src="${avatar}" alt="Avatar" class="leaderboard-avatar" 
                     onerror="this.src='https://sawcoin.vercel.app/i/users.jpg';" />
+                <span class="leaderboard-rank">${badge}</span>
                 <span class="leaderboard-username">${truncateUsername(user.username)}</span>
                 <span class="leaderboard-balance">${formatNumber(user.balance)} $SAW</span>
-                <span class="leaderboard-rank">${badge}</span>
             `;
 
             document.getElementById('leaderboardContainer').appendChild(userRow);
