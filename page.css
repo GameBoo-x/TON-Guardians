@@ -1,8 +1,7 @@
 .leaderboard-rank {
     position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 10px;
+    left: 40px;
     width: 25px; /* العرض + البادينج */
     height: 25px; /* الطول + البادينج */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -15,7 +14,6 @@
     box-sizing: border-box; 
     font-size: 12px;
     font-weight: bold;
-    margin-right: 10px;
 }
 
 
