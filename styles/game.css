@@ -1,14 +1,10 @@
-/*body {
-  overflow-x: hidden;
-}*/
-
 #competition {
   display: flex;
   overflow-x: auto;
   gap: 15px;
   padding: 10px;
   scroll-behavior: smooth;
-  direction: rtl; /* لتفعيل التمرير من اليمين إلى اليسار */
+  direction: ltr; /* التمرير من اليسار إلى اليمين */
 }
 
 .competition-item {
