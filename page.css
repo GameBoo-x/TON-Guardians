@@ -19,8 +19,8 @@
 
 .leaderboard-rank {
     position: absolute;
-    bottom: 20px;
-    left: 35px;
+    bottom: 30px;
+    left: 40px;
     width: 20px; /* العرض + البادينج */
     height: 20px; /* الطول + البادينج */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
