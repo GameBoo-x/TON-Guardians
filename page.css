@@ -1,9 +1,9 @@
 .leaderboard-rank {
     position: absolute;
-    bottom: 10px;
-    left: 40px;
-    width: 25px; /* العرض + البادينج */
-    height: 25px; /* الطول + البادينج */
+    bottom: 20px;
+    left: 35px;
+    width: 20px; /* العرض + البادينج */
+    height: 20px; /* الطول + البادينج */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box; 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
 }
 
@@ -842,7 +842,7 @@
 #Leaders-txt {
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 25px; /* يمكنك تغيير القيمة حسب المسافة التي تريدها */
+    margin-bottom: 50px; /* يمكنك تغيير القيمة حسب المسافة التي تريدها */
     font-weight: bold;
     font-size: 20px; 
 }
