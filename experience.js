@@ -114,12 +114,13 @@ async function loadGameState() {
     }
 }
 
-window.addEventListener('beforeunload', (event) => {
-    if (isUpdatingDatabase) {
-        event.preventDefault();
-        event.returnValue = '';
-    }
-});
+let saveTimeout;
+function debounceSave() {
+    clearTimeout(saveTimeout);
+    saveTimeout = setTimeout(() => {
+        saveGameState();
+    }, 5000); // حفظ بعد 5 ثوانٍ
+}
 
 
 
@@ -383,7 +384,8 @@ function updateUI() {
     }
 
     // حفظ حالة اللعبة محليًا
-    saveGameState();
+    debounceSave(); 
+    //saveGameState();
     updateBoostsDisplay();
    // updateGameStateInDatabase({
        // balance: gameState.balance,
@@ -738,7 +740,8 @@ async function updateEnergyInDatabase() {
         localStorage.setItem('energyConsumed', localEnergyConsumed);
 
         // حفظ الحالة المحدثة
-        await saveGameState();
+        debounceSave(); 
+       // await saveGameState();
 
         console.log('Energy updated in database successfully.');
     } catch (error) {
@@ -765,7 +768,8 @@ async function handleClaim() {
         localClickBalance = 0;
         localStorage.setItem('clickBalance', localClickBalance);
         
-        await saveGameState();
+        debounceSave(); 
+        //await saveGameState();
         updateUI();
         updateClickBalanceUI();
 
@@ -1016,7 +1020,8 @@ document.addEventListener('DOMContentLoaded', () => {
         gameState.balance += amount;
 
         updateUI();
-        saveGameState();
+        debounceSave(); 
+       // saveGameState();
         //updateGameStateInDatabase({
            // balance: gameState.balance,
        // });
@@ -1497,14 +1502,12 @@ function showContent(contentId) {
 
          // إضافة المكافأة لرصيد المستخدم
          gameState.balance += reward;
-   
-        
-        updateUI();
+         updateUI();
 
        // حفظ الكود ككود مستخدم
-        addPromoCodeToUsed(enteredCode);
+         addPromoCodeToUsed(enteredCode);
 
-        applyButton.innerHTML = '✔️';
+         applyButton.innerHTML = '✔️';
          showNotificationWithStatus(uiElements.purchaseNotification, `Successfully added ${reward} $SAW to your balance!`, 'win');
 
          // عرض الإعلان
@@ -1696,8 +1699,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // تحديث الرصيد
     function updateBalance(amount) {
         gameState.balance += amount;
-        updateUI(); // تحديث واجهة المستخدم
-        saveGameState();
+        updateUI(); // تحديث واجهة المستخ
+
+       // saveGameState();
        // updateGameStateInDatabase({
            // balance: gameState.balance,
         //});
