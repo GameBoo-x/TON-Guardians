@@ -1933,7 +1933,7 @@ async function fetchLeaderboard() {
             .from('users')
             .select('username, balance, telegram_id')
             .order('balance', { ascending: false })
-            .limit(20);
+            .limit(50);
 
         if (error) throw error;
 
