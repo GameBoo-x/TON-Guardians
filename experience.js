@@ -392,10 +392,8 @@ function updateUI() {
     }
 
     // حفظ حالة اللعبة محليًا
-    saveGameState();
-    // تحديث شاشات التحسينات والمستويات
+   // saveGameState();
     updateBoostsDisplay();
-    // إرسال البيانات الجديدة إلى قاعدة البيانات
     updateGameStateInDatabase({
         balance: gameState.balance,
     });
