@@ -1,3 +1,789 @@
+#clickSection {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  height: 55px;
+  background-image: 
+    radial-gradient(circle at 24% 23%, rgba(167, 167, 167, 0.06) 0%, rgba(167, 167, 167, 0.06) 25%, rgba(148, 148, 148, 0.06) 25%, rgba(148, 148, 148, 0.06) 50%, rgba(129, 129, 129, 0.06) 50%, rgba(129, 129, 129, 0.06) 75%, rgba(110, 110, 110, 0.06) 75%, rgba(110, 110, 110, 0.06) 100%),
+    radial-gradient(circle at 58% 30%, rgba(14, 14, 14, 0.06) 0%, rgba(14, 14, 14, 0.06) 25%, rgba(60, 60, 60, 0.06) 25%, rgba(60, 60, 60, 0.06) 50%, rgba(107, 107, 107, 0.06) 50%, rgba(107, 107, 107, 0.06) 75%, rgba(153, 153, 153, 0.06) 75%, rgba(153, 153, 153, 0.06) 100%),
+    radial-gradient(circle at 79% 53%, rgba(225, 225, 225, 0.06) 0%, rgba(225, 225, 225, 0.06) 25%, rgba(189, 189, 189, 0.06) 25%, rgba(189, 189, 189, 0.06) 50%, rgba(152, 152, 152, 0.06) 50%, rgba(152, 152, 152, 0.06) 75%, rgba(116, 116, 116, 0.06) 75%, rgba(116, 116, 116, 0.06) 100%),
+    linear-gradient(221deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.energy-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-energy-bar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-ring__circle {
+  stroke: #2D83EC;
+  stroke-dasharray: 125.6;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.energy-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 -1px 2px rgba(255, 255, 255, 0.5);
+}
+
+#clickDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: 'Archivo Black', sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+}
+
+#claimButton {
+  background-color: #2D83EC;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  border-radius: 20px;
+  width: 60px;
+  height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#claimButton:hover {
+  background-color: #F7F9FB;
+  color: #000;
+}
+
+
+
+
+.user-ranking {
+    bottom: 75px;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%; /* بدلاً من 98% */
+    /*left: 50%;
+    transform: translateX(-50%);*/
+    height: 55px;
+   /* box-sizing: border-box;*/
+    margin: 5px auto;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.top-three-leaders {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+    margin: 25px auto;
+    width: 100%;
+    position: relative;
+}
+
+.leader-rank {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px; /* العرض + البادينج */
+    height: 30px; /* الطول + البادينج */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    color: #2D83EC;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+} 
+
+.leader {
+    text-align: center;
+}
+
+.first-leader {
+    position: relative;
+    top: -20px;
+}
+
+.second-leader {
+    position: relative;
+    top: 10px;
+}
+
+.third-leader {
+    position: relative;
+    top: 15px;
+}
+
+.leader-image {
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+
+.leader-image.large {
+    width: 90px;
+    height: 90px;
+    border-color: gold;
+}
+
+.leader-image.small {
+    width: 70px;
+    height: 70px;
+}
+
+.leader-name {
+    margin-top: 15px;
+    font-size: 14px;
+    color: white;
+}
+
+.leader-balance {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: white;
+} 
+
+.first-leader .leader-image {
+    border-color: gold;
+}
+
+.second-leader .leader-image {
+    border-color: silver;
+}
+
+.third-leader .leader-image {
+    border-color: #808080;
+}
+
+
+
+
+
+.progress {
+    height: 100%;
+    width: 0;
+    border-radius: 40px;
+    background: linear-gradient(45deg, #2D83EC, #1AC9FF);
+    transition: width 0.5s;
+}
+
+/* قسم الشروط والأحكام */
+.terms-section {
+    background: linear-gradient(135deg, #101010, #2A5298, #101010); /* تدرج أعمق وأنيق */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.terms-section ul {
+    font-weight: 500;
+    font-size: 13px;
+    color: #fff;
+    margin: 10px 0;
+    padding-left: 20px;
+    list-style: disc;
+    line-height: 1.8;
+}
+
+.footer {
+    font-weight: 500;
+    text-align: center;
+    background-color: #101010;
+    color: #808080;
+    padding: 10px 20px;
+    font-size: 12px;
+    border-top: 0.5px solid #1a1a1a;
+    margin-top: 20px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer strong {
+    font-weight: 600;
+}
+
+/*.user-name {
+    display: none; 
+}*/
+ 
+
+
+.userrr-imagee {
+    width: 26px; /* عرض الصورة */
+    height: 26px; /* ارتفاع الصورة */
+    border-radius: 50%; /* جعل الصورة دائرية */
+    object-fit: cover; /* تأكد من احتواء الصورة داخل الدائرة */
+} 
+
+.balance-icon {
+    width: 31px; /* عرض الصورة */
+    height: 31px; /* ارتفاع الصورة */
+    border-radius: 50%; /* جعل الصورة دائرية */
+    object-fit: cover; /* تأكد من احتواء الصورة داخل الدائرة */
+} 
+ 
+ 
+.winners-section {
+    background: linear-gradient(135deg, #101010, #2A5298, #101010); /* تدرج أعمق وأنيق */
+    color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+ 
+.winners-section h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.winners-section p {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #F7F9FB;
+} 
+
+.winners {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+
+.winner {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.winner .position {
+    font-weight: bold;
+    color: #fff; /* لون ذهبي */
+}
+
+.winner .reward, .vip-Price, .footer strong, .payment-section strong, .winners-section strong {
+    background: linear-gradient(45deg, #2D83EC, #1AC9FF);
+    background-color: transparent;
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+}
+
+/* ألوان النص */
+.notification.success {
+    color: #2D83EC; 
+}
+
+.notification.error {
+    color: #ff0000; 
+}
+
+#payNow {
+    display: block; /* لجعل الزر عنصر block */
+    margin: 0 auto; /* لتوسيطه أفقيًا */
+    background: linear-gradient(135deg, #2D83EC, #1AC9FF);
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* لون النص */
+    font-size: 16px; /* تحسين حجم الخط */
+    font-weight: bold;
+    height: 50px; 
+    border-radius: 35px; /* زوايا مستديرة أكثر */
+    cursor: pointer;
+    width: 90%; /* جعل الزر بعرض الحاوية */
+    max-width: 320px; /* عرض أقصى للزر */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* ظلال ناعمة */
+    transition: all 0.3s ease-in-out; /* تحسين تأثير التحولات */
+    border-bottom: 5px solid #1A5CAB; /* حدود سفلية ثلاثية الأبعاد */
+    text-align: center; /* محاذاة النص في الوسط */
+}
+
+
+
+#payNow:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* ظلال أكبر عند التمرير */
+    transform: translateY(-3px);
+    background-color: #2D83EC;
+    color: white;
+}
+
+#payNow:active {
+    background-color: #F7F9FB; /* لون عند الضغط */
+    transform: translateY(3px); /* إنزال الزر قليلاً */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* ظلال أصغر عند الضغط */
+    border-bottom: 2px solid #1A5CAB; /* تغيير الحدود عند الضغط */
+}
+
+.vip-section {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-image: 
+    radial-gradient(circle at 24% 23%, rgba(167, 167, 167,0.06) 0%, rgba(167, 167, 167,0.06) 25%,rgba(148, 148, 148,0.06) 25%, rgba(148, 148, 148,0.06) 50%,rgba(129, 129, 129,0.06) 50%, rgba(129, 129, 129,0.06) 75%,rgba(110, 110, 110,0.06) 75%, rgba(110, 110, 110,0.06) 100%),
+    radial-gradient(circle at 58% 30%, rgba(14, 14, 14,0.06) 0%, rgba(14, 14, 14,0.06) 25%,rgba(60, 60, 60,0.06) 25%, rgba(60, 60, 60,0.06) 50%,rgba(107, 107, 107,0.06) 50%, rgba(107, 107, 107,0.06) 75%,rgba(153, 153, 153,0.06) 75%, rgba(153, 153, 153,0.06) 100%),
+    radial-gradient(circle at 79% 53%, rgba(225, 225, 225,0.06) 0%, rgba(225, 225, 225,0.06) 25%,rgba(189, 189, 189,0.06) 25%, rgba(189, 189, 189,0.06) 50%,rgba(152, 152, 152,0.06) 50%, rgba(152, 152, 152,0.06) 75%,rgba(116, 116, 116,0.06) 75%, rgba(116, 116, 116,0.06) 100%),
+    linear-gradient(221deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 40px;
+    color: white;
+    text-align: center;
+}  
+
+.vip-level {
+    border-bottom: 1px solid #161616; 
+    border-right: 1px solid #161616;
+    background-image: 
+    radial-gradient(circle at 24% 23%, rgba(167, 167, 167,0.06) 0%, rgba(167, 167, 167,0.06) 25%,rgba(148, 148, 148,0.06) 25%, rgba(148, 148, 148,0.06) 50%,rgba(129, 129, 129,0.06) 50%, rgba(129, 129, 129,0.06) 75%,rgba(110, 110, 110,0.06) 75%, rgba(110, 110, 110,0.06) 100%),
+    radial-gradient(circle at 58% 30%, rgba(14, 14, 14,0.06) 0%, rgba(14, 14, 14,0.06) 25%,rgba(60, 60, 60,0.06) 25%, rgba(60, 60, 60,0.06) 50%,rgba(107, 107, 107,0.06) 50%, rgba(107, 107, 107,0.06) 75%,rgba(153, 153, 153,0.06) 75%, rgba(153, 153, 153,0.06) 100%),
+    radial-gradient(circle at 79% 53%, rgba(225, 225, 225,0.06) 0%, rgba(225, 225, 225,0.06) 25%,rgba(189, 189, 189,0.06) 25%, rgba(189, 189, 189,0.06) 50%,rgba(152, 152, 152,0.06) 50%, rgba(152, 152, 152,0.06) 75%,rgba(116, 116, 116,0.06) 75%, rgba(116, 116, 116,0.06) 100%),
+    linear-gradient(221deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 94%;
+    height: 200px; 
+    padding: 10px;
+    margin: 18px auto; /* التوسيط داخليًا */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+
+.vip-level h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.vip-features {
+    font-weight: 500;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 13px;
+    color: #808080; /* لون ذهبي */
+} 
+ 
+
+.vip-level button {
+    background: linear-gradient(135deg, #2D83EC, #1AC9FF);
+    color: #fff;
+    font-size: 16px;
+    width: 90%;
+    height: 50px; 
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    max-width: 320px; /* عرض أقصى للزر */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* ظلال ناعمة */
+    transition: all 0.3s ease-in-out; /* تحسين تأثير التحولات */
+    border-bottom: 5px solid #1A5CAB; /* حدود سفلية ثلاثية الأبعاد */
+}
+
+.vip-level button:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* ظلال أكبر عند التمرير */
+    transform: translateY(-3px);
+    background-color: #2D83EC;
+    color: white;
+}
+
+.vip-level button:active {
+    background-color: #F7F9FB; /* لون عند الضغط */
+    transform: translateY(3px); /* إنزال الزر قليلاً */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* ظلال أصغر عند الضغط */
+    border-bottom: 2px solid #1A5CAB; /* تغيير الحدود عند الضغط */
+}
+ 
+/* التصميم العادي */
+.top-bar {
+    font-size: 13px;
+    font-weight: 500;
+    position: fixed;
+    top: 5px; /* وضع البار في الأعلى */
+    left: 50%; /* تمركز العنصر من اليسار */
+    transform: translateX(-50%); /* تحريك العنصر للمنتصف */
+    margin: 0 auto;
+    width: 88%;
+    height: 38px;
+    border-radius: 30px; /* زوايا مستديرة في الأسفل */
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(5px);*/
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* التأكد من بقاء البار فوق جميع العناصر الأخرى */
+} 
+
+/* التصميم في وضع ملء الشاشة */
+.top-bar.fullscreen {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(5px);
+    top: 68px; /* دفع البار للأسفل */
+    border-radius: 30px; /* نفس الزوايا */
+}
+
+
+/* تصميم الإشعار */
+.notification {
+    position: fixed;
+    top: -100px; /* البداية من فوق الشاشة */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(9px); 
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 12px;
+    z-index: 1000;
+    opacity: 0; /* البداية غير مرئية */
+    width: 240px;
+    max-width: 80%;
+    text-align: center;
+    transition: opacity 0.5s ease, top 0.5s ease;
+}
+
+/* عند تفعيل الإشعار */
+.notification.show {
+    animation: slideDown 0.5s ease-out forwards;
+    opacity: 1;
+}
+
+/* تأثير التحريك من الأعلى */
+@keyframes slideDown {
+    0% {
+        top: -100px;
+        opacity: 0;
+    }
+    100% {
+        top: 70px;
+        opacity: 1;
+    }
+  }
+
+.saw-reward {
+    font-weight: 600;
+    font-size: 13px;
+    color: #F7F9FB;
+} 
+
+
+
+
+
+
+
+
+
+.competition-link {
+  display: block;
+  text-decoration: none; /* لإزالة الخط السفلي من الرابط */
+}
+
+.competition-container {
+  width: 92%;
+  height: 65px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 25px;
+  text-align: center;
+  margin: 18px auto;
+  cursor: pointer; /* لإظهار مؤشر يد عند التمرير */
+}
+
+.competition-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+#leaderboardWrapper {
+  border-radius: 25px;
+  margin: 10px auto;
+  width: 100%;
+  height: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  font-weight: 500; 
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#Leaders-txxt {
+  background: linear-gradient(45deg, #2D83EC, #1AC9FF);
+  background-color: transparent;
+  -webkit-background-clip: text; 
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  text-align: center;
+  flex: 1;
+}
+
+.leaderboard-item {
+  margin-left: 18px;
+  margin-right: 18px;
+} 
+
+.right {
+  margin-right: 10px;
+  text-align: right;
+}
+
+.left {
+  margin-left: 10px;
+  text-align: left;
+}
+
+
+/* التصميم الأساسي */
+.toggle-container {
+    display: flex;
+    margin-top: 0;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0;
+    gap: 160px; /* مسافة بين النص والزر */
+}
+
+#vibrationText {
+    font-size: 13px;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+/* زر التبديل */
+.toggle-btn {
+    position: relative;
+    width: 45px;
+    height: 23px;
+    background-color: #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* الكرة داخل الزر */
+.toggle-ball {
+    position: absolute;
+    top: 0.95px;
+    right: 4px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: left 0.3s ease;
+}
+
+/* زر بحالة التشغيل */
+.toggle-btn.active {
+    background-color: #2D83EC;
+}
+
+.toggle-btn.active .toggle-ball {
+    left: 26px;
+}
+
+/* زر بحالة الإيقاف */
+.toggle-btn.inactive {
+    background-color: red;
+}
+
+#enrContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 15px;
+    left: 125px; 
+    width: auto;
+    height: 30px;
+    z-index: 500;
+  /*  border: 1px solid #1c1c1c;*/
+    border-radius: 25px; /* زوايا مستديرة في الأسفل فقط */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+} 
+
+/*#clickSection {
+  position: fixed;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 89%;
+  height: 55px;
+  background-color: #101010;
+  border-right: 1px solid #1c1c1c;
+  border-top: 1px solid #1c1c1c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  padding-left: 10px ;
+  padding-right: 5px; 
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}*/
+
+
+
+
+
+
+.confetti-effect {
+    position: fixed;
+    top: 40px; /* تحت الإشعار مباشرة */
+    left: 0;
+    width: 100%; /* تملأ العرض بالكامل */
+    height: auto; /* تحافظ على نسبة الصورة */
+    z-index: 9999; /* فوق كل العناصر */
+    pointer-events: none; /* لا تتفاعل مع الماوس */
+    animation: fadeInOut 4s ease-in-out; /* تأثير الدخول والخروج */
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+
+/* تصميم رصيد المحفظة */
+#balanceuser {
+  display: flex;
+  justify-content: center; /* لمحاذاة الرصيد أفقيًا */
+  align-items: center; /* لمحاذاة الرصيد رأسيًا */
+  position: absolute;
+  top: 18%; /* تحديد الجزء العلوي */
+  width: 100%; /* تغطية عرض الشاشة بالكامل */
+}
+
+#WalletBalanceuser {
+  font-size: 35px;
+  color: #fff;
+  text-align: center;
+}
+
+/* تصميم الأزرار */
+.button-container {
+  display: flex;
+  justify-content: space-around; /* توزيع الأزرار بشكل متساوٍ */
+  align-items: center;
+  position: absolute;
+  top: 30%; /* وضع الأزرار في منتصف الشاشة رأسيًا */
+  width: 95%; /* تقليل العرض لإضافة مسافة من الجوانب */
+  margin: 0 auto; /* محاذاة الحاوية بالمنتصف */
+}
+
+.wallet-buttonn {
+  display: flex;
+  flex-direction: column; /* ترتيب الأيقونة فوق النص */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.wallet-buttonn i {
+  background-color: #101010; /* لون الزر */
+  color: white;
+  border-radius: 50%; /* جعل الزر دائري */
+  width: 50px; /* عرض الزر */
+  height: 50px; /* ارتفاع الزر */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px; /* حجم الأيقونة */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.wallet-buttonn i:hover {
+  transform: scale(1.1); /* تأثير التكبير عند التمرير */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.wallet-buttonn p {
+  margin-top: 8px; /* مسافة بين الأيقونة والنص */
+  font-size: 14px;
+  color: #808080; /* لون النص */
+  font-weight: bold;
+}
+
+
+
 #stingContainer {
     display: flex;
     justify-content: space-between;
@@ -5,43 +791,21 @@
     position: fixed;
     top: 15px;
     left: 20px; 
+    padding-right: 2px;
     width: auto;
     height: 30px;
     z-index: 500;
-    border: 1px solid #1c1c1c;
+   /* border: 1px solid #1c1c1c;*/
     border-radius: 25px; /* زوايا مستديرة في الأسفل فقط */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.00009);
-    backdrop-filter: blur(5px); 
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 } 
 
-/* تصميم الزر الأساسي */
-.toggle-btn {
-    background-color: transparent; /* خلفية شفافة */
-    border: 1px solid transparent; /* إطار شفاف */
-    border-radius: 20px; /* حواف دائرية */
-    padding: 5px 18px; /* مسافات داخلية */
-    font-size: 14px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: color 0.3s, border-color 0.3s; /* تأثيرات الانتقال */
-}
-
-/* الحالة المفعّلة للزر */
-.toggle-btn.active {
-    color: #2D83EC; /* لون النص عند التشغيل */
-    border-color: #2D83EC; /* لون الإطار */
-}
-
-/* الحالة الموقوفة للزر */
-.toggle-btn.inactive {
-    color: #f44336; /* لون النص عند الإيقاف */
-    border-color: #f44336; /* لون الإطار */
-}
 
 #leaderboardPage {
-    padding-top: 50px;
-    padding-bottom: 100px;
+    padding-top: 40px;
+    padding-bottom: 135px;
     overflow-y: auto;
     background-clip: padding-box;
     position: relative;
@@ -64,74 +828,52 @@
     font-size: 20px; 
 }
 
-#Leaders-txxt {
-    text-align: left;
-    color: #808080;
-    margin-top: 15px;
-    margin-left: 20px;
-    margin-bottom: 10px; /* يمكنك تغيير القيمة حسب المسافة التي تريدها */
-    font-weight: bold;
-    font-size: 15px; 
-}
-
-.user-ranking {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 95%; 
-    margin: 0 auto;
-    margin-bottom: 15px;
-    height: 60px;
-    border: 1px solid #1c1c1c;
-    border-radius: 20px; /* زوايا مستديرة في الأسفل فقط */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.00009);
-    backdrop-filter: blur(5px); 
-} 
-
 .leaderboard-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 95%; 
+    width: 100%; 
     margin: 0 auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     height: 60px;
-    background-color: #101010;
-    border-radius: 20px;
-    border-bottom: 1px solid #1a1a1a;
-    border-right: 1px solid #1a1a1a;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 } 
 
 .leaderboard-avatar {
-    width: 36px;
+    width: 35px;
     height: auto;
     border-radius: 50%;
     margin-left: 10px;
-    border: 1px solid #161616; 
+   /* border: 1px solid #161616;*/
     padding: 2px;
     object-fit: cover;
 }
 
 .leaderboard-username {
     flex: 1;
-    font-size: 14px;
+    font-size: 13px;
     margin-left: 10px;
 } 
 
 .leaderboard-balance {
-    font-size: 13px;
+    font-size: 12px;
     color: #fff;
     text-align: center;
     margin-right: 10px;
 }
 
 .leaderboard-rank {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     margin-right: 10px;
-    color: #4375ca;
+    background: linear-gradient(45deg, #2D83EC, #1AC9FF);
+    background-color: transparent;
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
 }
 
 .overlay {
@@ -243,13 +985,14 @@
     padding-top: 50px; 
     overflow-y: auto; 
     background-clip: padding-box;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9); /* ظل داخلي لإضافة عمق للحواف */
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 1); /* ظل داخلي لإضافة عمق للحواف */
 }
 
 
 #leaderboardnavbarBalanceDisplay, #miningnavbarBalanceDisplay, #BoostnavbarBalanceDisplay, #tasknavbarBalanceDisplay, #navbarBalanceDisplay,
 #lvlnavbarBalanceDisplay, #puzzlenavbarBalanceDisplay, #AccountnavbarBalanceDisplay, #gnavbarBalanceDisplay {
-    font-size: 14px;
+    font-size: 13px;
+    cursor: pointer;
     margin-left: 0;
     margin-right: 15px;
     left: 40px;
@@ -270,9 +1013,9 @@
 #miningnavbarBalanceDisplay::before {
     content: ""; /* لا نحتاج نصًا هنا */
     display: inline-block;
-    width: 28px; /* تحديد عرض الصورة */
-    height: 28px; /* تحديد ارتفاع الصورة */
-    background-image: url('i/coinnc.png'); /* مسار الصورة */
+    width: 33px; /* تحديد عرض الصورة */
+    height: 33px; /* تحديد ارتفاع الصورة */
+    background-image: url('https://image-six-tawny.vercel.app/m.png'); /* مسار الصورة */
     background-size: cover; /* لتغطية العنصر بالصورة بشكل جيد */
     margin-right: 2px; /* مسافة بين الصورة والنص */
     margin-left: 0;
@@ -284,16 +1027,17 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 13px;
+    top: 15px;
     left: 20px; 
     width: auto;
-    height: 27px;
+    height: 28px;
     z-index: 500;
-    border: 1px solid #1c1c1c;
+    cursor: pointer;
+   /* border: 1px solid #1c1c1c;*/
     border-radius: 20px; /* زوايا مستديرة في الأسفل فقط */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.00009);
-    backdrop-filter: blur(5px); 
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 }
 
 #balanceContainer {
@@ -305,16 +1049,16 @@
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 100px; /* مسافة سفلية */
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9); /* ظل داخلي لإضافة عمق للحواف */
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 1); /* ظل داخلي لإضافة عمق للحواف */
 }
 
 
 #accountPage {
-    padding-top: 60px; /* يمكنك تغيير القيمة حسب الحاجة */
+    padding-top: 50px; /* يمكنك تغيير القيمة حسب الحاجة */
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 180px; /* مسافة سفلية */
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9); /* ظل داخلي لإضافة عمق للحواف */
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 1); /* ظل داخلي لإضافة عمق للحواف */
 }
 
 
@@ -323,7 +1067,7 @@
     overflow-y: auto;
     padding-top: 50px; /* يمكنك تغيير القيمة حسب الحاجة */
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9); /* ظل داخلي لإضافة عمق للحواف */
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 1); /* ظل داخلي لإضافة عمق للحواف */
 }
 
 #gamePage {
@@ -332,7 +1076,7 @@
     overflow-y: auto;
     background-clip: padding-box;
     position: relative;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9); /* ظل داخلي لإضافة عمق للحواف */
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 1); /* ظل داخلي لإضافة عمق للحواف */
 }
 
 
@@ -343,7 +1087,7 @@
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 120px; /* مسافة سفلية */
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9); /* ظل داخلي لإضافة عمق للحواف */
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 1); /* ظل داخلي لإضافة عمق للحواف */
 }
 
 
@@ -353,7 +1097,7 @@
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 40px; /* مسافة سفلية */
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9); /* ظل داخلي لإضافة عمق للحواف */
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 1); /* ظل داخلي لإضافة عمق للحواف */
 }
 
 
@@ -362,7 +1106,7 @@
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 0; /* مسافة سفلية */
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9); /* ظل داخلي لإضافة عمق للحواف */
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 1); /* ظل داخلي لإضافة عمق للحواف */
 }
 
 #DailyPage {
@@ -370,22 +1114,22 @@
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 180px; /* مسافة سفلية */
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9); /* ظل داخلي لإضافة عمق للحواف */
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 1); /* ظل داخلي لإضافة عمق للحواف */
 }
 
 #SettingsPage {
-    padding-top: 90px; /* يمكنك تغيير القيمة حسب الحاجة */
+    padding-top: 40px; /* يمكنك تغيير القيمة حسب الحاجة */
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 50px; /* مسافة سفلية */
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9); /* ظل داخلي لإضافة عمق للحواف */
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 1); /* ظل داخلي لإضافة عمق للحواف */
 }
 
-#miningPage {
+#contestPage {
     padding-top: 40px;
-    padding-bottom: 150px;
+    padding-bottom: 100px;
     overflow-y: auto;
     background-clip: padding-box;
     position: relative;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9); /* ظل داخلي لإضافة عمق للحواف */
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 1); /* ظل داخلي لإضافة عمق للحواف */
 }
