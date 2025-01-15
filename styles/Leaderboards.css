@@ -106,7 +106,7 @@
 
 
 .user-ranking {
-    bottom: 75px;
+    bottom: 70px;
     position: fixed;
     z-index: 100;
     display: flex;
