@@ -1,4 +1,4 @@
-.leaderboard-rank {
+.leaderboard-rank, #Le {
     position: absolute;
     bottom: 20px;
     left: 35px;
@@ -875,7 +875,7 @@
 .leaderboard-username {
     flex: 1;
     font-size: 13px;
-    margin-left: 10px;
+    margin-left: 28px;
 } 
 
 .leaderboard-balance {
