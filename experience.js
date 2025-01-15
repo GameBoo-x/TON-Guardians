@@ -72,13 +72,18 @@ let gameState = {
 //تحديث البيانت من الواجهه الي قاعده البيانات 
 async function updateGameStateInDatabase(updatedData) {
     const userId = uiElements.userTelegramIdDisplay.innerText;
+    // منع تحديث الرصيد بـ 0 إذا لم يكن القصد ذلك
+    if (updatedData.balance === 0 && gameState.balance !== 0) {
+        console.warn('Skipping update: balance is 0 but the current gameState balance is not.');
+        return false;
+    }
 
     try {
         const { data, error } = await supabase
             .from('users')
             .update(updatedData)
             .eq('telegram_id', userId)
-            .select(); 
+            .select();
 
         if (error) {
             console.error('Error updating game state in Supabase:', error);
@@ -112,8 +117,14 @@ async function loadGameState() {
         }
 
         if (data) {
-            console.log('Loaded game state:', data); // عرض البيانات المحملة
-            gameState = { ...gameState, ...data };
+            console.log('Loaded game state:', data);
+
+            // دمج البيانات مع التأكد من عدم الكتابة فوق balance إذا لم يكن موجودًا
+            gameState = {
+                ...gameState,
+                ...data,
+                balance: data.balance !== undefined ? data.balance : gameState.balance,
+            };
             updateUI();
         } else {
             console.warn('No game state found for this user.');
