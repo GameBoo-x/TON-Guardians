@@ -34,18 +34,17 @@
   text-align: left;
 }
 
-.competition-saw {
-  font-size: 16px;
-  margin: 5px 10px 0;
-  text-align: left;
-  color: #00ffcc;
-}
-
-.competition-meta {
+.competition-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px;
+  margin-top: auto; /* لجعلها في الجزء السفلي */
+  padding: 0 10px;
+}
+
+.competition-saw {
+  font-size: 16px;
+  color: #00ffcc;
 }
 
 #competitionaew {
@@ -53,7 +52,6 @@
   height: 20px;
   color: #00adb5;
 }
-
 
 
 
