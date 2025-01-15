@@ -874,7 +874,7 @@ async function loadFriendsList() {
             const friendsPromises = limitedInvites.map(async (friendId) => {
                 const { data: friendData, error: friendError } = await supabase
                     .from('users')
-                    .select('telegram_id, balance')
+                    .select('telegram_id, username, balance') // إضافة اسم المستخدم
                     .eq('telegram_id', friendId)
                     .single();
 
@@ -895,9 +895,11 @@ async function loadFriendsList() {
                     const li = document.createElement('li');
                     li.classList.add('friend-item'); // إضافة الـ CSS
 
-                    // إنشاء عنصر الصورة الافتراضية
+                    // إنشاء عنصر الصورة الفعلية أو الافتراضية
                     const img = document.createElement('img');
-                    img.src = 'i/users.jpg'; // رابط الصورة الافتراضية
+                    img.src = friend.username 
+                        ? `https://t.me/i/userpic/320/${friend.username}.svg` 
+                        : 'i/users.jpg'; // الصورة الافتراضية إذا لم يكن هناك اسم مستخدم
                     img.alt = `${friend.telegram_id} Avatar`;
                     img.classList.add('friend-avatar');
 
@@ -958,12 +960,6 @@ async function loadFriendsList() {
     }
 }
 
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from './Scripts/config.js';
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-
 // نسخ رابط الدعوة
 function copyInviteLink() {
     const inviteLink = `https://t.me/SAWCOIN_BOT?start=${uiElements.userTelegramIdDisplay?.innerText || ''}`;
@@ -973,6 +969,12 @@ function copyInviteLink() {
         showNotification(uiElements.purchaseNotification, 'Failed to copy invite link.');
     });
 }
+
+
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from './Scripts/config.js';
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 
 // مشاركة الدعوة عبر Telegram
 function openTelegramChat() {
