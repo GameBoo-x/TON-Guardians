@@ -1,15 +1,6 @@
 const uiElements = {
     balanceDisplay: document.getElementById('balanceAmount'),
-    accountBalanceDisplay: document.getElementById('AccountnavbarBalanceDisplay'),
-    taskBalanceDisplay: document.getElementById('tasknavbarBalanceDisplay'),
-    puzzleBalanceDisplay: document.getElementById('puzzlenavbarBalanceDisplay'),
-    boostBalanceDisplay: document.getElementById('BoostnavbarBalanceDisplay'),
-    lvlBalanceDisplay: document.getElementById('lvlnavbarBalanceDisplay'),
-    miningBalanceDisplay: document.getElementById('miningnavbarBalanceDisplay'),
-    walletBalanceDisplay: document.getElementById('navbarBalanceDisplay'),
-    settingsBalanceDisplay: document.getElementById('settingsBalanceDisplay'),
-    gnavbarBalanceDisplay: document.getElementById('gnavbarBalanceDisplay'),
-    leaderboardnavbarBalanceDisplay: document.getElementById('leaderboardnavbarBalanceDisplay'),
+    settingsBalanceDisplay: document.getElementById('settingsBalanceDisplay'),    
     energyBar: document.getElementById('energyBar'),
     energyInfo: document.getElementById('energyInfo'),
     languageBtn: document.getElementById('languageSwitchBtn'),
@@ -372,6 +363,17 @@ function updateUI() {
         mainDigitsElement.textContent = mainDigits;
         remainingDigitsElement.textContent = remainingDigits;
     }
+    
+    const balanceElements = [
+        uiElements.settingsBalanceDisplay
+    ];
+
+     balanceElements.forEach(element => {
+    if (element) {
+        element.innerText = formatNumber(gameState.balance);
+      }
+   });
+
 
     // تحديث مضاعف النقرة
     if (uiElements.clickMultiplierDisplay) {
@@ -765,11 +767,8 @@ async function handleClaim() {
         // إعادة تعيين الرصيد المحلي للنقرات
         localClickBalance = 0;
         localStorage.setItem('clickBalance', localClickBalance);
-
-        // حفظ الحالة المحدثة
+        
         await saveGameState();
-
-        // تحديث واجهة المستخدم
         updateUI();
         updateClickBalanceUI();
 
