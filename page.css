@@ -1,3 +1,24 @@
+.leaderboard-rank {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px; /* العرض + البادينج */
+    height: 25px; /* الطول + البادينج */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; 
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
 #clickSection {
   position: fixed;
   bottom: 100px;
@@ -837,6 +858,7 @@
     margin-bottom: 10px;
     height: 60px;
     border-radius: 25px;
+    position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
@@ -865,16 +887,6 @@
     margin-right: 10px;
 }
 
-.leaderboard-rank {
-    font-size: 12px;
-    font-weight: bold;
-    margin-right: 10px;
-    background: linear-gradient(45deg, #2D83EC, #1AC9FF);
-    background-color: transparent;
-    -webkit-background-clip: text; 
-    background-clip: text;
-    color: transparent;
-}
 
 .overlay {
     position: fixed;
