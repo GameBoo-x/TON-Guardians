@@ -1,4 +1,22 @@
-.leaderboard-rank, #Le {
+#Le {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px; /* العرض + البادينج */
+    height: 50px; /* الطول + البادينج */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; 
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+
+.leaderboard-rank {
     position: absolute;
     bottom: 20px;
     left: 35px;
