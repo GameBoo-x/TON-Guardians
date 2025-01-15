@@ -1,6 +1,6 @@
 .leader i {
     position: absolute;
-    bottom: 135px;
+    bottom: 136px;
     left: 50%;
     transform: translateX(-50%);
     width: 50px; /* العرض + البادينج */
