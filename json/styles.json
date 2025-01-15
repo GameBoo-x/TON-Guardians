@@ -8,6 +8,7 @@
     "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
     "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css",
     "styles.css",
+    "styles/Leaderboards.css", 
     "styles/Settings.css",
     "styles/Friend.css", 
     "styles/impact.css",  
