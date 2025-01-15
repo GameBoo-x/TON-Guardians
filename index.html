@@ -18,11 +18,9 @@
     <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-    
     <script> eruda.init(); </script>
 </head>
 <body>
-    <!-- Splash Screen -->
     <div class="splash-screen">
         <p class="splash-subtitle"></p>
         <div class="loading-container">
@@ -31,7 +29,6 @@
     </div>
 
     <div class="container" style="display: none;">
-        <!-- Main Page -->
         <div id="mainPage" class="screen-content active">
             <main class="main-content">
                 <div id="balanceContainer" class="balance-container"></div>
@@ -227,12 +224,6 @@
 
         <!-- Account Page -->
         <div id="accountPage" class="screen-content scrollable">
-           <!-- <div id="globalNavbar">
-                <div id="balanceContainer">
-                    <span id="AccountnavbarBalanceDisplay">0.00</span>
-                </div>
-            </div>-->
-
             <div class="invite">
                <div class="invite-card">
                     <div class="invite-header">
@@ -270,22 +261,38 @@
 
         <!-- Tasks Page -->
         <div id="tasksPage" class="screen-content scrollable">
-            <!--<div id="globalNavbar">
-                <div id="balanceContainer">
-                    <span id="tasknavbarBalanceDisplay">0.00</span>
-                </div>
-            </div>-->
-
             <div class="description-taskk">
                 <p class="taskk-title">TASKS & EARNING</p>
             </div>
 
             <div id="task-earn">
-             <a href="https://t.me/SAWCOIN_BOT/race" class="competition-link">
+                    <div class="daily-itemm" id="Regular">
+                      <i class="fa-solid fa-gift"></i>
+                        <p class="Daily-title">Subscribe to the competition </p>
+                         <p class="Daily-titlee">+500,000 $SAW</p>
+                          <div class="Daily-meta">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" id="Dailyaew">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                         </svg>
+                      </div>
+                   </div>
+                  <div class="daily-itemm" id="vip">
+                     <i class="fa-solid fa-gift"></i>
+                       <p class="Daily-title">Get an VIP subscription to the competition </p>
+                        <p class="Daily-titlee">+1,000,000 $SAW</p>
+                        <div class="Daily-meta">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" id="Dailyaew">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                     </svg>
+                   </div>
+                 </div>
+                    
+            <!-- <a href="https://t.me/SAWCOIN_BOT/race" class="competition-link">
                <div class="competition-container">
                   <img src="https://image-six-tawny.vercel.app/ffg.png" alt="Image" class="competition-image">
                </div>
-             </a>
+             </a>-->
+
                 <div id="DContainer">
                     <p id="Daily-earning"> Daily earning </p>
                     <div class="daily-itemm animated-element" id="daily2">
@@ -320,27 +327,6 @@
                             </svg>
                         </div>
                     </div>
-                    <p id="Subscribe"> Subscription tasks  </p>
-                    <div class="daily-itemm" id="Regular">
-                      <i class="fa-solid fa-gift"></i>
-                        <p class="Daily-title">Subscribe to the competition </p>
-                         <p class="Daily-titlee">+500,000 $SAW</p>
-                          <div class="Daily-meta">
-                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" id="Dailyaew">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                         </svg>
-                      </div>
-                   </div>
-                  <div class="daily-itemm" id="vip">
-                     <i class="fa-solid fa-gift"></i>
-                       <p class="Daily-title">Get an VIP subscription to the competition </p>
-                        <p class="Daily-titlee">+1,000,000 $SAW</p>
-                        <div class="Daily-meta">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" id="Dailyaew">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                     </svg>
-                   </div>
-                 </div>
                 </div>
                 <section id="taskcontainer" class="task-container">
                     <p id="t"> Daily Tasks </p>
@@ -350,12 +336,7 @@
 
         <!-- Boosts Page -->
         <div id="boostsPage" class="screen-content scrollable">
-            <!--<div id="globalNavbar">
-                <div id="balanceContainer">
-                    <span id="BoostnavbarBalanceDisplay">0.00</span>
-                </div>
-            </div> -->
-            <img src="i/rocket.png" alt="Boost Image" class="bos-image">
+           <img src="i/rocket.png" alt="Boost Image" class="bos-image">
             <p id="boos-txt">BOOSTS</p>
             <section class="boosts-container">
                 <!-- Boost 1: Hand Clicks -->
@@ -521,12 +502,7 @@
 
         <!-- صفحه المتصدرين  -->
   <div id="leaderboardPage" class="screen-content hidden">
-    <!--<div id="globalNavbar">
-        <div id="balanceContainer">
-            <span id="leaderboardnavbarBalanceDisplay">0.00</span>
-        </div>
-    </div>-->
-   <p id="Leaders-txt">LEADERBOARD \ TOP 50</p>
+   <p id="Leaders-txt">LEADERBOARD</p>
    <div id="topThreeLeaders" class="top-three-leaders">
     <div class="leader second-leader">
         <img src="" alt="Second Place" id="secondPlaceImg" class="leader-image small" />
@@ -583,7 +559,7 @@
             
    <div id="leaderboardWrapper">
         <p class="leaderboard-item right">#Rank</p>
-       <!-- <p id="Leaders-txxt">Name</p>-->
+        <p id="Leaders-txxt">TOP 50</p>
         <p class="leaderboard-item left"> Total Coins</p>
    </div>
    <div id="leaderboardContainer" class="leaderboard-container"></div>
@@ -594,9 +570,6 @@
       <span class="leaderboard-balance" id="userBalance"></span>
    </div>       
 </div>
-
-
-     
 
       
         <nav class="menu">
