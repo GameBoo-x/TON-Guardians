@@ -1,3 +1,68 @@
+body {
+  overflow-x: hidden;
+}
+
+#competition {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px;
+  scroll-behavior: smooth;
+  direction: rtl; /* لتفعيل التمرير من اليمين إلى اليسار */
+}
+
+.competition-item {
+  background-color: rgba(24, 24, 24, 0.9); /* لون خلفية مع الشفافية */
+  width: 95%;
+  height: 120px;
+  flex: 0 0 auto;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.competition-item i {
+  font-size: 30px;
+  color: #00adb5;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.competition-title {
+  margin: 50px 10px 0 10px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.competition-saw {
+  font-size: 16px;
+  margin: 5px 10px 0;
+  text-align: left;
+  color: #00ffcc;
+}
+
+.competition-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+#competitionaew {
+  width: 20px;
+  height: 20px;
+  color: #00adb5;
+}
+
+
+
+
+
+
 .icon-gamepad {
     display: block;
     margin: 5px auto;
