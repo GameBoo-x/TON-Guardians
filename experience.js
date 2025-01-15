@@ -123,7 +123,6 @@ function debounceSave() {
 }
 
 
-
 // حفظ حالة اللعبة في LocalStorage وقاعدة البيانات
 async function saveGameState() {
     const userId = uiElements.userTelegramIdDisplay.innerText;
@@ -323,8 +322,6 @@ async function ensureUserAuthenticationAndDatabase(telegramId, userName) {
 }
 
 
-
-
 function updateUI() {
     // تنسيق الرصيد: استخدام toLocaleString مع الفواصل المناسبة
     let formattedBalance = gameState.balance.toLocaleString("en-US", {
@@ -385,11 +382,7 @@ function updateUI() {
 
     // حفظ حالة اللعبة محليًا
     debounceSave(); 
-    //saveGameState();
     updateBoostsDisplay();
-   // updateGameStateInDatabase({
-       // balance: gameState.balance,
-    //});
 }
 
 
@@ -739,9 +732,7 @@ async function updateEnergyInDatabase() {
         localEnergyConsumed = 0; // إعادة تعيين الطاقة المستهلكة
         localStorage.setItem('energyConsumed', localEnergyConsumed);
 
-        // حفظ الحالة المحدثة
         debounceSave(); 
-       // await saveGameState();
 
         console.log('Energy updated in database successfully.');
     } catch (error) {
@@ -768,8 +759,6 @@ async function handleClaim() {
         localClickBalance = 0;
         localStorage.setItem('clickBalance', localClickBalance);
         
-        debounceSave(); 
-        //await saveGameState();
         updateUI();
         updateClickBalanceUI();
 
@@ -1018,13 +1007,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function rewardUser(amount) {
         // إضافة المكافأة إلى رصيد المستخدم (تأكد من دمج هذا مع منطق اللعبة الحالي)
         gameState.balance += amount;
-
         updateUI();
-        debounceSave(); 
-       // saveGameState();
-        //updateGameStateInDatabase({
-           // balance: gameState.balance,
-       // });
     }
 });
 
@@ -1279,8 +1262,6 @@ function openTaskLink(taskurl, callback) {
 
 
 
-
-
 /////////////////////////////////////
 
 
@@ -1405,8 +1386,6 @@ tonConnectUI.uiOptions = {
     twaReturnUrl: 'https://t.me/SAWCOIN_BOT/GAME'
 };
 
-
-
 /////////////////////////////////////////
 
 
@@ -1504,7 +1483,6 @@ function showContent(contentId) {
          gameState.balance += reward;
          updateUI();
 
-       // حفظ الكود ككود مستخدم
          addPromoCodeToUsed(enteredCode);
 
          applyButton.innerHTML = '✔️';
@@ -1700,11 +1678,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateBalance(amount) {
         gameState.balance += amount;
         updateUI(); // تحديث واجهة المستخ
-
-       // saveGameState();
-       // updateGameStateInDatabase({
-           // balance: gameState.balance,
-        //});
     }
 
     // فتح نافذة تسجيل الدخول اليومي
