@@ -373,26 +373,6 @@ function updateUI() {
         remainingDigitsElement.textContent = remainingDigits;
     }
 
-    // تحديث باقي عناصر الرصيد في الواجهة
-    const balanceElements = [
-        uiElements.walletBalanceDisplay,
-        uiElements.accountBalanceDisplay,
-        uiElements.taskBalanceDisplay,
-        uiElements.puzzleBalanceDisplay,
-        uiElements.settingsBalanceDisplay,
-        uiElements.boostBalanceDisplay,
-        uiElements.lvlBalanceDisplay,
-        uiElements.leaderboardnavbarBalanceDisplay,
-        uiElements.gnavbarBalanceDisplay,
-        uiElements.miningBalanceDisplay
-    ];
-
-     balanceElements.forEach(element => {
-    if (element) {
-        element.innerText = formatNumber(gameState.balance);
-      }
-   });
-
     // تحديث مضاعف النقرة
     if (uiElements.clickMultiplierDisplay) {
         uiElements.clickMultiplierDisplay.innerText = gameState.clickMultiplier;
@@ -405,7 +385,6 @@ function updateUI() {
 
     // حفظ حالة اللعبة محليًا
     saveGameState();
-   // await fetchUserRank();
     updateBoostsDisplay();
    // updateGameStateInDatabase({
        // balance: gameState.balance,
