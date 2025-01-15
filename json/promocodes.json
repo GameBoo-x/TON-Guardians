@@ -1,5 +1,6 @@
 {
   "promoCodes": {
+    "CODE1": 10000000, 
     "CODE1A23": 100,
     "CODE2B34": 200,
     "CODE3C45": 300,
