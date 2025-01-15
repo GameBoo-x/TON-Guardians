@@ -405,7 +405,7 @@ function updateUI() {
 
     // حفظ حالة اللعبة محليًا
     saveGameState();
-    await fetchUserRank();
+   // await fetchUserRank();
     updateBoostsDisplay();
    // updateGameStateInDatabase({
        // balance: gameState.balance,
