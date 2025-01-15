@@ -1699,7 +1699,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateBalance(amount) {
         gameState.balance += amount;
         updateUI(); // تحديث واجهة المستخدم
-        saveGameState();
+        updateGameStateInDatabase({
+            balance: gameState.balance,
+        });
     }
 
     // فتح نافذة تسجيل الدخول اليومي
