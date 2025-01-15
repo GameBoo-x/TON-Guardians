@@ -751,10 +751,17 @@ async function updateEnergyInDatabase() {
     isUpdatingDatabase = true;
 
     try {
+        // حساب الطاقة الحالية
         const currentEnergy = gameState.maxEnergy - localEnergyConsumed;
-        await updateGameStateInDatabase({ energy: currentEnergy });
+        gameState.energy = currentEnergy;
+
+        // تحديث الطاقة في LocalStorage
         localEnergyConsumed = 0; // إعادة تعيين الطاقة المستهلكة
         localStorage.setItem('energyConsumed', localEnergyConsumed);
+
+        // حفظ الحالة المحدثة
+        await saveGameState();
+
         console.log('Energy updated in database successfully.');
     } catch (error) {
         console.error('Error updating energy in database:', error);
@@ -762,7 +769,6 @@ async function updateEnergyInDatabase() {
         isUpdatingDatabase = false;
     }
 }
-
 
 // التعامل مع زر المطالبة
 async function handleClaim() {
@@ -774,14 +780,17 @@ async function handleClaim() {
     const totalReward = localClickBalance;
 
     try {
-        await updateGameStateInDatabase({
-            balance: gameState.balance + totalReward,
-        });
-
+        // تحديث الرصيد في gameState
         gameState.balance += totalReward;
+
+        // إعادة تعيين الرصيد المحلي للنقرات
         localClickBalance = 0;
         localStorage.setItem('clickBalance', localClickBalance);
 
+        // حفظ الحالة المحدثة
+        await saveGameState();
+
+        // تحديث واجهة المستخدم
         updateUI();
         updateClickBalanceUI();
 
@@ -791,7 +800,6 @@ async function handleClaim() {
         showNotification(uiElements.purchaseNotification, 'Failed to claim clicks. Try again later.');
     }
 }
-
 
 // تهيئة التطبيق
 document.addEventListener('DOMContentLoaded', () => {
