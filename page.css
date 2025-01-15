@@ -636,7 +636,7 @@
 }
 
 #tasksPage {
-    padding-top: 80px; /* يمكنك تغيير القيمة حسب الحاجة */
+    padding-top: 40px; /* يمكنك تغيير القيمة حسب الحاجة */
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 100px; /* مسافة سفلية */
@@ -645,7 +645,7 @@
 
 
 #accountPage {
-    padding-top: 50px; /* يمكنك تغيير القيمة حسب الحاجة */
+    padding-top: 30px; /* يمكنك تغيير القيمة حسب الحاجة */
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 180px; /* مسافة سفلية */
@@ -674,7 +674,7 @@
 
 #boostsPage {
     background-size: cover;
-    padding-top: 50px; /* يمكنك تغيير القيمة حسب الحاجة */
+    padding-top: 30px; /* يمكنك تغيير القيمة حسب الحاجة */
     background-clip: padding-box; /* تأكد من أن الخلفية لا تؤثر على المسافة */
     overflow-y: auto; /* لجعل الصفحة قابلة للتمرير */
     padding-bottom: 120px; /* مسافة سفلية */
