@@ -2174,7 +2174,41 @@ function showBanScreen() {
 
 ////////////////////////////////////
 
+const competition = document.getElementById("competition");
+const leftArrow = document.getElementById("left-arrow");
+const rightArrow = document.getElementById("right-arrow");
 
+rightArrow.addEventListener("click", () => {
+  competition.scrollBy({ left: 300, behavior: "smooth" });
+  updateArrows();
+});
+
+leftArrow.addEventListener("click", () => {
+  competition.scrollBy({ left: -300, behavior: "smooth" });
+  updateArrows();
+});
+
+function updateArrows() {
+  const scrollLeft = competition.scrollLeft;
+  const scrollWidth = competition.scrollWidth - competition.clientWidth;
+
+  if (scrollLeft > 0) {
+    leftArrow.style.display = "flex";
+  } else {
+    leftArrow.style.display = "none";
+  }
+
+  if (scrollLeft < scrollWidth) {
+    rightArrow.style.display = "flex";
+  } else {
+    rightArrow.style.display = "none";
+  }
+}
+
+competition.addEventListener("scroll", updateArrows);
+updateArrows();
+
+/////////////////////////////
 
 
 
