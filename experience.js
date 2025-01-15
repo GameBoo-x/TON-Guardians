@@ -2192,17 +2192,11 @@ function updateArrows() {
   const scrollLeft = competition.scrollLeft;
   const scrollWidth = competition.scrollWidth - competition.clientWidth;
 
-  if (scrollLeft > 0) {
-    leftArrow.style.display = "flex";
-  } else {
-    leftArrow.style.display = "none";
-  }
+  // اجعل السهم الأيسر مخفيًا عند البداية
+  leftArrow.style.display = scrollLeft > 0 ? "flex" : "none";
 
-  if (scrollLeft < scrollWidth) {
-    rightArrow.style.display = "flex";
-  } else {
-    rightArrow.style.display = "none";
-  }
+  // اجعل السهم الأيمن ظاهرًا دائمًا إذا كان هناك محتوى للتمرير
+  rightArrow.style.display = scrollWidth > 0 ? "flex" : "none";
 }
 
 competition.addEventListener("scroll", updateArrows);
