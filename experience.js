@@ -76,8 +76,9 @@ async function updateGameStateInDatabase(updatedData) {
     try {
         const { data, error } = await supabase
             .from('users')
-            .update(updatedData) // البيانات الجديدة
-            .eq('telegram_id', userId); // شرط التحديث
+            .update(updatedData)
+            .eq('telegram_id', userId)
+            .select(); 
 
         if (error) {
             console.error('Error updating game state in Supabase:', error);
@@ -91,7 +92,6 @@ async function updateGameStateInDatabase(updatedData) {
         return false;
     }
 }
-
 
 
 //تحديث قاعده البيانات 
