@@ -2230,10 +2230,66 @@ overlay.addEventListener('click', () => {
   settingsContainer.classList.add('hidden');
 });
 
-
-
 /////////////////////////////
 
+const competitionItems = document.querySelectorAll(".competition-item");
+
+async function checkUserParticipation() {
+  try {
+    // الحصول على بيانات المستخدم من Supabase
+    const userId = window.Telegram.WebApp.initDataUnsafe.user?.id;
+    const { data, error } = await supabase
+      .from("users")
+      .select("is_participating, vip_status")
+      .eq("telegram_id", userId)
+      .single();
+
+    if (error) throw new Error("Error fetching user data: " + error.message);
+
+    // تحديث المهام بناءً على حالة المستخدم
+    competitionItems.forEach((item) => {
+      const taskId = item.id;
+      const icon = item.querySelector(".action-icon");
+
+      // التحقق من الاشتراك العادي
+      if (taskId === "task-1" && data.is_participating === true) {
+        icon.classList.add("completed");
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />';
+      }
+      // التحقق من اشتراك VIP
+      else if (taskId === "task-2" && data.vip_status === true) {
+        icon.classList.add("completed");
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />';
+      }
+    });
+  } catch (error) {
+    console.error("Error checking participation:", error.message);
+    showNotification("Failed to check participation status.", "error");
+  }
+}
+
+competitionItems.forEach((item) => {
+  item.addEventListener("click", async () => {
+    const taskId = item.id;
+    const icon = item.querySelector(".action-icon");
+
+    // إذا كانت المهمة مكتملة
+    if (icon.classList.contains("completed")) {
+      showNotification("You have already completed this task!", "info");
+      return;
+    }
+
+    // توجيه المستخدم بناءً على المهمة
+    if (taskId === "task-1") {
+      window.location.href = "https://t.me/SAWCOIN_BOT/race";
+    } else if (taskId === "task-2") {
+      window.location.href = "https://t.me/SAWCOIN_BOT/race";
+    }
+  });
+});
+
+// استدعاء التحقق عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", checkUserParticipation);
 
 
 
