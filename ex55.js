@@ -2250,7 +2250,7 @@ document.querySelectorAll('.purchase-item').forEach(item => {
 // دالة تنفيذ الدفع
 async function processPayment(price, coins) {
   const amount = `${price * 1e9}`; // تحويل السعر إلى Nano TON
-  const recipientAddress = "UQCpMg6TV_zE34ao-Ii2iz5M6s5Qp8OIVWa3YbsB9KwxzwCJ";
+  const recipientAddress = "UQAAPaYVPAR3-pWt6tTUfjyVvzjS2PiEOpgA4eJGMAcHVV_Z";
 
   const transaction = {
     validUntil: Math.floor(Date.now() / 1000) + 600, // صالح لمدة 10 دقائق
