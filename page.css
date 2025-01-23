@@ -34,7 +34,7 @@
   white-space: nowrap; /* منع كسر النص */
   overflow: hidden;
   text-overflow: ellipsis; /* قص النص إذا كان طويلاً */
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   display: flex;
   align-items: center;
