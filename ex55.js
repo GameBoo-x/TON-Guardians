@@ -2261,6 +2261,53 @@ tonConnectUI.uiOptions = {
 };
 
 
+
+// منطق الشراء من المتجر
+document.querySelectorAll('.purchase-item').forEach(item => {
+  item.addEventListener('click', async () => {
+    const price = parseInt(item.getAttribute('data-price')); // السعر بالطن
+    const coins = parseInt(item.getAttribute('data-coins')); // عدد العملات
+
+    // التحقق من ربط المحفظة
+    if (!walletAddress) {
+      showNotification(uiElements.purchaseNotification, 'Please connect your wallet first!');
+      await connectToWallet();
+      return;
+    }
+
+    try {
+      await processPayment(price, coins);
+    } catch (error) {
+      console.error("Payment failed:", error.message);
+      showNotification(uiElements.purchaseNotification, `Payment failed: ${error.message}`);
+    }
+  });
+});
+
+// دالة تنفيذ الدفع
+async function processPayment(price, coins) {
+  const amount = `${price * 1e9}`; // تحويل السعر إلى Nano TON
+  const recipientAddress = "UQCpMg6TV_zE34ao-Ii2iz5M6s5Qp8OIVWa3YbsB9KwxzwCJ";
+
+  const transaction = {
+    validUntil: Math.floor(Date.now() / 1000) + 600, // صالح لمدة 10 دقائق
+    messages: [{ address: recipientAddress, amount }],
+  };
+
+  // إرسال المعاملة باستخدام TON Connect
+  await tonConnectUI.sendTransaction(transaction);
+
+  // تحديث رصيد المستخدم
+  gameState.balance += coins;
+  updateUI();
+  showNotificationWithStatus(
+    uiElements.purchaseNotification,
+    `Successfully purchased ${formatNumber(coins)} coins!`,
+    'win'
+  );
+}
+
+
 /////////////////////////////
 
 
