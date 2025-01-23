@@ -2188,101 +2188,49 @@ competitionItems.forEach((item) => {
 // استدعاء التحقق عند تحميل الصفحة
 document.addEventListener("DOMContentLoaded", checkUserParticipation);
 
-
+/////////////////////////////////
 
 // تعريف المتغيرات
+let walletAddress = null;
 let lastTaskTime = parseInt(localStorage.getItem('lastTaskTime')) || 0;
-let walletAddress = null; // تعريف المحفظة
 
+// إعداد TonConnect UI
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://sawcoin.vercel.app/json/tonconnect-manifest.json',
-    buttonRootId: 'ton-connect'
+  manifestUrl: 'https://sawcoin.vercel.app/json/tonconnect-manifest.json',
+  buttonRootId: 'ton-connect',
+  uiOptions: {
+    twaReturnUrl: 'https://t.me/SAWCOIN_BOT/GAME'
+  }
 });
 
-// استماع لزر الدفع
-document.getElementById('ton').addEventListener('click', async () => {
-    const currentTime = Date.now();
-    if (currentTime - lastTaskTime < 12 * 60 * 60 * 1000) {
-        const remainingTime = 12 * 60 * 60 * 1000 - (currentTime - lastTaskTime);
-        const hours = Math.floor(remainingTime / (60 * 60 * 1000));
-        const minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
-        showNotification(purchaseNotification, `You can complete this task again in ${hours}h ${minutes}m.`);
-        return;
-    }
+// دالة التحقق من الوقت المتبقي لتنفيذ العملية
+function checkCooldownPeriod(lastTime, cooldownHours = 12) {
+  const currentTime = Date.now();
+  const cooldownMs = cooldownHours * 60 * 60 * 1000;
 
-    // تحقق من ربط المحفظة
-    if (!walletAddress) {
-        showNotification(purchaseNotification, 'Please connect your wallet first!');
-        await connectToWallet();
-        return;
-    }
+  if (currentTime - lastTime < cooldownMs) {
+    const remainingTime = cooldownMs - (currentTime - lastTime);
+    const hours = Math.floor(remainingTime / (60 * 60 * 1000));
+    const minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
+    return { canProceed: false, remainingTime: `${hours}h ${minutes}m` };
+  }
 
-    // إجراء الدفع
-    try {
-        const amount = "500000000";
-        const recipientAddress = "UQCpMg6TV_zE34ao-Ii2iz5M6s5Qp8OIVWa3YbsB9KwxzwCJ";
-
-        const transaction = {
-            validUntil: Math.floor(currentTime / 1000) + 600, // صالح لمدة 10 دقائق
-            messages: [{ address: recipientAddress, amount }],
-        };
-
-        await tonConnectUI.sendTransaction(transaction);
-
-        // تحديث وقت التنفيذ في التخزين المحلي
-        lastTaskTime = currentTime;
-        localStorage.setItem('lastTaskTime', lastTaskTime);
-        
-        const reward = 50000;
-        gameState.balance += reward;
-        updateUI();
-        showNotification(purchaseNotification, `Thank you for your contribution! Task completed successfully. You earned ${reward} coins.`);
-    } catch (error) {
-        console.error("Error completing task:", error.message);
-        showNotification(purchaseNotification, `Payment failed: ${error.message}`);
-    }
-});
+  return { canProceed: true };
+}
 
 // دالة الاتصال بالمحفظة
 async function connectToWallet() {
-    try {
-        const connectedWallet = await tonConnectUI.connectWallet();
-        walletAddress = connectedWallet.account.address; // تحديث المحفظة
-        console.log('Wallet connected:', walletAddress);
-    } catch (error) {
-        console.error('Failed to connect wallet:', error.message);
-        showNotification(purchaseNotification, `Failed to connect wallet: ${error.message}`);
-    }
+  try {
+    const connectedWallet = await tonConnectUI.connectWallet();
+    walletAddress = connectedWallet.account.address;
+    console.log('Wallet connected:', walletAddress);
+    showNotification(uiElements.purchaseNotification, 'Wallet connected successfully!');
+  } catch (error) {
+    console.error('Failed to connect wallet:', error.message);
+    showNotification(uiElements.purchaseNotification, `Failed to connect wallet: ${error.message}`);
+    throw error;
+  }
 }
-
-// خيارات واجهة TON Connect
-tonConnectUI.uiOptions = {
-    twaReturnUrl: 'https://t.me/SAWCOIN_BOT/GAME'
-};
-
-
-
-// منطق الشراء من المتجر
-document.querySelectorAll('.purchase-item').forEach(item => {
-  item.addEventListener('click', async () => {
-    const price = parseInt(item.getAttribute('data-price')); // السعر بالطن
-    const coins = parseInt(item.getAttribute('data-coins')); // عدد العملات
-
-    // التحقق من ربط المحفظة
-    if (!walletAddress) {
-      showNotification(uiElements.purchaseNotification, 'Please connect your wallet first!');
-      await connectToWallet();
-      return;
-    }
-
-    try {
-      await processPayment(price, coins);
-    } catch (error) {
-      console.error("Payment failed:", error.message);
-      showNotification(uiElements.purchaseNotification, `Payment failed: ${error.message}`);
-    }
-  });
-});
 
 // دالة تنفيذ الدفع
 async function processPayment(price, coins) {
@@ -2294,18 +2242,88 @@ async function processPayment(price, coins) {
     messages: [{ address: recipientAddress, amount }],
   };
 
-  // إرسال المعاملة باستخدام TON Connect
-  await tonConnectUI.sendTransaction(transaction);
+  try {
+    await tonConnectUI.sendTransaction(transaction);
 
-  // تحديث رصيد المستخدم
-  gameState.balance += coins;
-  updateUI();
-  showNotificationWithStatus(
-    uiElements.purchaseNotification,
-    `Successfully purchased ${formatNumber(coins)} coins!`,
-    'win'
-  );
+    // تحديث رصيد المستخدم
+    gameState.balance += coins;
+    updateUI();
+    showNotificationWithStatus(
+      uiElements.purchaseNotification,
+      `Successfully purchased ${formatNumber(coins)} coins!`,
+      'win'
+    );
+  } catch (error) {
+    console.error("Payment failed:", error.message);
+    showNotification(uiElements.purchaseNotification, `Payment failed: ${error.message}`);
+    throw error;
+  }
 }
+
+// منطق الدفع عند النقر على العناصر
+document.querySelectorAll('.purchase-item').forEach(item => {
+  item.addEventListener('click', async () => {
+    const price = parseInt(item.getAttribute('data-price')); // السعر بالطن
+    const coins = parseInt(item.getAttribute('data-coins')); // عدد العملات
+
+    try {
+      // التحقق من ربط المحفظة
+      if (!walletAddress) {
+        showNotification(uiElements.purchaseNotification, 'Please connect your wallet first!');
+        await connectToWallet();
+      }
+
+      // عرض واجهة الدفع مباشرة
+      await processPayment(price, coins);
+    } catch (error) {
+      console.error("Error during purchase:", error.message);
+    }
+  });
+});
+
+// منطق تنفيذ مهمة محددة (مثال مع وقت تبريد)
+document.getElementById('ton').addEventListener('click', async () => {
+  const cooldownCheck = checkCooldownPeriod(lastTaskTime, 12);
+
+  if (!cooldownCheck.canProceed) {
+    showNotification(
+      uiElements.purchaseNotification,
+      `You can complete this task again in ${cooldownCheck.remainingTime}.`
+    );
+    return;
+  }
+
+  try {
+    // التحقق من ربط المحفظة
+    if (!walletAddress) {
+      showNotification(uiElements.purchaseNotification, 'Please connect your wallet first!');
+      await connectToWallet();
+    }
+
+    // تنفيذ الدفع
+    const amount = "500000000"; // المبلغ بالنانو TON
+    const recipientAddress = "UQCpMg6TV_zE34ao-Ii2iz5M6s5Qp8OIVWa3YbsB9KwxzwCJ";
+
+    const transaction = {
+      validUntil: Math.floor(Date.now() / 1000) + 600,
+      messages: [{ address: recipientAddress, amount }],
+    };
+
+    await tonConnectUI.sendTransaction(transaction);
+
+    // تحديث وقت التنفيذ والرصيد
+    lastTaskTime = Date.now();
+    localStorage.setItem('lastTaskTime', lastTaskTime);
+
+    const reward = 50000;
+    gameState.balance += reward;
+    updateUI();
+    showNotification(uiElements.purchaseNotification, `Task completed! You earned ${formatNumber(reward)} coins.`);
+  } catch (error) {
+    console.error("Error completing task:", error.message);
+    showNotification(uiElements.purchaseNotification, `Task failed: ${error.message}`);
+  }
+});
 
 
 /////////////////////////////
