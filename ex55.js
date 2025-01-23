@@ -2210,7 +2210,9 @@ document.addEventListener("DOMContentLoaded", checkUserParticipation);
 
 
 
-// إجراء الدفع
+// استعادة وقت المهمة الأخير من التخزين المحلي
+let lastTaskTime = parseInt(localStorage.getItem('lastTaskTime')) || 0;
+
 document.getElementById('ton').addEventListener('click', async () => {
     const currentTime = Date.now();
     if (currentTime - lastTaskTime < 12 * 60 * 60 * 1000) {
