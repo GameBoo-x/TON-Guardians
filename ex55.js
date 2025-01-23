@@ -1316,26 +1316,6 @@ function initializeTelegramIntegration() {
 window.addEventListener("load", initializeTelegramIntegration); 
 window.Telegram.WebApp.setHeaderColor('#000000');
 
-
-
-/////////////////////////////////////////////////
-
-
-const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://sawcoin.vercel.app/json/tonconnect-manifest.json',
-    buttonRootId: 'ton-connect'
-});
-
-async function connectToWallet() {
-    const connectedWallet = await tonConnectUI.connectWallet();
-    // يمكنك تنفيذ بعض العمليات باستخدام connectedWallet إذا لزم الأمر
-    console.log(connectedWallet);
-}
-
-tonConnectUI.uiOptions = {
-    twaReturnUrl: 'https://t.me/SAWCOIN_BOT/GAME'
-};
-
 /////////////////////////////////////////
 
 
@@ -2210,9 +2190,16 @@ document.addEventListener("DOMContentLoaded", checkUserParticipation);
 
 
 
-// استعادة وقت المهمة الأخير من التخزين المحلي
+// تعريف المتغيرات
 let lastTaskTime = parseInt(localStorage.getItem('lastTaskTime')) || 0;
+let walletAddress = null; // تعريف المحفظة
 
+const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+    manifestUrl: 'https://sawcoin.vercel.app/json/tonconnect-manifest.json',
+    buttonRootId: 'ton-connect'
+});
+
+// استماع لزر الدفع
 document.getElementById('ton').addEventListener('click', async () => {
     const currentTime = Date.now();
     if (currentTime - lastTaskTime < 12 * 60 * 60 * 1000) {
@@ -2255,6 +2242,24 @@ document.getElementById('ton').addEventListener('click', async () => {
         showNotification(purchaseNotification, `Payment failed: ${error.message}`);
     }
 });
+
+// دالة الاتصال بالمحفظة
+async function connectToWallet() {
+    try {
+        const connectedWallet = await tonConnectUI.connectWallet();
+        walletAddress = connectedWallet.account.address; // تحديث المحفظة
+        console.log('Wallet connected:', walletAddress);
+    } catch (error) {
+        console.error('Failed to connect wallet:', error.message);
+        showNotification(purchaseNotification, `Failed to connect wallet: ${error.message}`);
+    }
+}
+
+// خيارات واجهة TON Connect
+tonConnectUI.uiOptions = {
+    twaReturnUrl: 'https://t.me/SAWCOIN_BOT/GAME'
+};
+
 
 /////////////////////////////
 
