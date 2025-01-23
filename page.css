@@ -1,3 +1,33 @@
+#store {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 2fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.purchase-item {
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #101010;
+  transition: transform 0.5s;
+}
+
+.purchase-item:hover {
+  transform: scale(1.05);
+}
+
+.purchase-item img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+
+
 #enrContainer {
     display: flex;
     justify-content: space-between;
