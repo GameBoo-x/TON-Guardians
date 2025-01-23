@@ -1147,7 +1147,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                             hideLoading(button, 'Claim');
                         }, 5000);
                     } else if (taskProgress === 2) {
-                        claimTaskReward(task.id, task.reward, button);
+                        claimTaskReward(task.id, task.reward, button, completedTasks);
                     }
                 });
             });
