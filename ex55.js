@@ -2191,7 +2191,7 @@ document.addEventListener("DOMContentLoaded", checkUserParticipation);
 /////////////////////////////////
 
 // تعريف المتغيرات
-let walletAddress = null;
+let walletAddress = localStorage.getItem('walletAddress') || null; // استرجاع العنوان من localStorage
 let lastTaskTime = parseInt(localStorage.getItem('lastTaskTime')) || 0;
 
 // إعداد TonConnect UI
@@ -2203,26 +2203,12 @@ const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
   }
 });
 
-// دالة التحقق من الوقت المتبقي لتنفيذ العملية
-function checkCooldownPeriod(lastTime, cooldownHours = 12) {
-  const currentTime = Date.now();
-  const cooldownMs = cooldownHours * 60 * 60 * 1000;
-
-  if (currentTime - lastTime < cooldownMs) {
-    const remainingTime = cooldownMs - (currentTime - lastTime);
-    const hours = Math.floor(remainingTime / (60 * 60 * 1000));
-    const minutes = Math.floor((remainingTime % (60 * 60 * 1000)) / (60 * 1000));
-    return { canProceed: false, remainingTime: `${hours}h ${minutes}m` };
-  }
-
-  return { canProceed: true };
-}
-
-// دالة الاتصال بالمحفظة
+// دالة التحقق من ربط المحفظة
 async function connectToWallet() {
   try {
     const connectedWallet = await tonConnectUI.connectWallet();
-    walletAddress = connectedWallet.account.address;
+    walletAddress = connectedWallet.account.address; // حفظ عنوان المحفظة
+    localStorage.setItem('walletAddress', walletAddress); // تخزين العنوان في localStorage
     console.log('Wallet connected:', walletAddress);
     showNotification(uiElements.purchaseNotification, 'Wallet connected successfully!');
   } catch (error) {
@@ -2231,6 +2217,35 @@ async function connectToWallet() {
     throw error;
   }
 }
+
+// دالة التحقق من عنوان المحفظة المحفوظة
+function checkWalletConnection() {
+  if (!walletAddress) {
+    walletAddress = localStorage.getItem('walletAddress'); // إعادة التحميل من localStorage إذا كانت null
+  }
+  return !!walletAddress; // إذا كان العنوان موجودًا، تُرجع true
+}
+
+// منطق الدفع عند النقر على العناصر
+document.querySelectorAll('.purchase-item').forEach(item => {
+  item.addEventListener('click', async () => {
+    const price = parseInt(item.getAttribute('data-price')); // السعر بالطن
+    const coins = parseInt(item.getAttribute('data-coins')); // عدد العملات
+
+    try {
+      // التحقق من ربط المحفظة
+      if (!checkWalletConnection()) {
+        showNotification(uiElements.purchaseNotification, 'Please connect your wallet first!');
+        await connectToWallet();
+      }
+
+      // عرض واجهة الدفع مباشرة
+      await processPayment(price, coins);
+    } catch (error) {
+      console.error("Error during purchase:", error.message);
+    }
+  });
+});
 
 // دالة تنفيذ الدفع
 async function processPayment(price, coins) {
@@ -2260,27 +2275,6 @@ async function processPayment(price, coins) {
   }
 }
 
-// منطق الدفع عند النقر على العناصر
-document.querySelectorAll('.purchase-item').forEach(item => {
-  item.addEventListener('click', async () => {
-    const price = parseInt(item.getAttribute('data-price')); // السعر بالطن
-    const coins = parseInt(item.getAttribute('data-coins')); // عدد العملات
-
-    try {
-      // التحقق من ربط المحفظة
-      if (!walletAddress) {
-        showNotification(uiElements.purchaseNotification, 'Please connect your wallet first!');
-        await connectToWallet();
-      }
-
-      // عرض واجهة الدفع مباشرة
-      await processPayment(price, coins);
-    } catch (error) {
-      console.error("Error during purchase:", error.message);
-    }
-  });
-});
-
 // منطق تنفيذ مهمة محددة (مثال مع وقت تبريد)
 document.getElementById('ton').addEventListener('click', async () => {
   const cooldownCheck = checkCooldownPeriod(lastTaskTime, 12);
@@ -2295,7 +2289,7 @@ document.getElementById('ton').addEventListener('click', async () => {
 
   try {
     // التحقق من ربط المحفظة
-    if (!walletAddress) {
+    if (!checkWalletConnection()) {
       showNotification(uiElements.purchaseNotification, 'Please connect your wallet first!');
       await connectToWallet();
     }
