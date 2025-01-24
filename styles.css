@@ -960,7 +960,7 @@ body {
 
 
 
-#Daily-earning {
+#Daily-earning, #t {
     font-weight: 500;
     z-index: 100;
     color: #808080; 
@@ -972,11 +972,12 @@ body {
     margin-left: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);    border-radius: 25px; /* الزوايا الدائرية */
+    backdrop-filter: blur(5px); 
+    border-radius: 25px; /* الزوايا الدائرية */
     padding: 8px; 
 }
 
-#t {
+#StoreX, #boostsx {
     font-weight: 500;
     z-index: 100;
     color: #808080; 
@@ -988,7 +989,8 @@ body {
     margin-left: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);    border-radius: 25px; /* الزوايا الدائرية */
+    backdrop-filter: blur(5px); 
+    border-radius: 25px; /* الزوايا الدائرية */
     padding: 8px; /* مسافة داخلية بين النص وحواف الخلفية */
 }
 
