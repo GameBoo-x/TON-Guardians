@@ -1,9 +1,13 @@
 #boos-txt {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 0; /* يمكنك تغيير القيمة حسب المسافة التي تريدها */
+    text-shadow: 2px 2px #181818;
+    font-size: 22px;
+    color: #fff; /* تأكد من أن النص يظهر بوضوح على الصورة */
+    z-index: 100; /* تأكد من أن النص فوق الصورة */
+    animation: popIn 0.4s ease forwards;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 10px; /* يمكنك تغيير القيمة حسب المسافة التي تريدها */
     font-weight: bold;
-    font-size: 20px; 
 }
 
 #upgradeTitle {
