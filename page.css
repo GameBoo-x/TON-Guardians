@@ -1,3 +1,37 @@
+#WrapperFriends {
+  border-radius: 25px;
+  margin: 20px auto 5px auto;
+  width: 97%;
+  height: 80px; /* زيادة الارتفاع لإفساح المجال للرقم */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  font-weight: 500;
+  display: flex;
+  justify-content: center; /* توسيط المحتوى أفقيًا */
+  align-items: center; /* توسيط المحتوى عموديًا */
+  text-align: center; /* توسيط النصوص داخل الحاوية */
+}
+
+#icInvitations {
+  color: #fff;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column; /* جعل الكلمة فوق الرقم */
+  align-items: center;
+}
+
+#invitedText {
+  font-size: 16px; /* حجم النص العلوي */
+}
+
+#invitedCount {
+  margin-top: 5px; /* مسافة بين الكلمة والرقم */
+  font-size: 24px; /* تكبير حجم الرقم */
+  font-weight: bold; /* جعل الرقم عريضًا */
+}
+
+
 #store {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* خانتين بجانب بعض */
