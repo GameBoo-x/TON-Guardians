@@ -977,7 +977,17 @@ body {
     padding: 8px; 
 }
 
-#StoreX, #boostsx {
+#StoreX {
+    font-weight: 500;
+    z-index: 100;
+    color: #808080; 
+    font-size: 15px; 
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+ #boostsx {
     font-weight: 500;
     z-index: 100;
     color: #808080; 
